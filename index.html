@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="en" data-platform="standalone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#cee9f7">
+<meta name="description" content="Explore 100 levels across ten skies. Unlock eight blasters, six explorers and twelve colour finishes, then build your own endless run.">
+<title>Stack Sprint — Sky Courier Collection</title>
+
+<style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Arial,Helvetica,sans-serif;background:#d7eafa;color:#272740;-webkit-tap-highlight-color:transparent}button,input{font:inherit}button{cursor:pointer;touch-action:manipulation}button:focus-visible{outline:3px solid #f48b4e;outline-offset:4px}button:disabled{cursor:default;opacity:.5}button[hidden],[hidden]{display:none!important}#world{position:fixed;inset:0;width:100%;height:100%;touch-action:none}#app{position:fixed;inset:0;pointer-events:none}#app button,#app input,#app .sheet{pointer-events:auto}.hud{position:absolute;top:max(22px,env(safe-area-inset-top));left:24px;right:24px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.stats{display:flex;gap:10px}.stat{background:rgba(255,255,255,.85);border:2px solid rgba(255,255,255,.8);border-radius:18px;padding:10px 19px;min-width:115px;box-shadow:0 6px 0 #c4d6e34d;backdrop-filter:blur(12px)}.stat small{display:block;color:#77768f;font-size:10px;font-weight:800;letter-spacing:1.5px;margin-bottom:3px}.stat strong{font-size:28px;font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:-1px}.stat.gem strong{color:#a77a26}.icon-button{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid #fff;background:#ffffffcf;border-radius:15px;color:#464462;box-shadow:0 4px 0 #a9bccc38}.icon-button svg{width:21px;height:21px}.hud-actions{display:flex;gap:9px}.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px}.menu{align-items:flex-start;justify-content:flex-start;padding:0}.intro{position:absolute;left:clamp(32px,8vw,140px);top:clamp(105px,20vh,210px);max-width:440px}.eyebrow{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:800;letter-spacing:2.8px;margin:0 0 20px;color:#575879}.eyebrow:before{content:'';width:8px;height:8px;border-radius:50%;background:#8362d3;box-shadow:0 0 0 5px #8362d318}h1{font-size:clamp(66px,8vw,120px);line-height:.88;letter-spacing:-7px;margin:0 0 24px;font-weight:900;transform:rotate(-3deg);text-shadow:0 4px 0 #ffffffc4}h1 span{display:block;color:#6450bc}h1 .mint{color:#208b79}.tagline{font-size:17px;line-height:1.5;color:#63667e;max-width:320px;margin:0 0 26px}.primary{background:#6150b8;color:white;border:0;border-bottom:6px solid #443789;border-radius:19px;min-height:62px;padding:15px 29px;font-weight:900;font-size:17px;letter-spacing:.25px;display:inline-flex;gap:36px;align-items:center;justify-content:center;box-shadow:0 9px 22px #52429822;transition:transform .12s,background .12s}.primary:hover{background:#705dce;transform:translateY(-2px)}.primary:active{transform:translateY(3px);border-bottom-width:3px}.primary .arrow{font-size:25px;line-height:1}.secondary{background:#f1eef9;color:#655790;border:1px solid #dfd8ef;border-bottom:3px solid #d7cee8;border-radius:14px;padding:12px 20px;min-height:47px;font-weight:700}.sub-actions{display:flex;gap:10px;margin-top:16px}.control-hint{margin-top:23px;color:#7a7a93;font-size:12px;display:flex;gap:9px;align-items:center}.keys{background:#ffffffa6;padding:5px 8px;border-radius:7px;font-weight:bold;letter-spacing:4px}.bottom-note{position:absolute;bottom:max(23px,env(safe-area-inset-bottom));left:28px;font-size:11px;letter-spacing:1.5px;font-weight:700;color:#757a91}.pill-note{position:absolute;right:35px;bottom:30px;background:#ffffffad;border:1px solid #fff;border-radius:30px;padding:12px 19px;font-weight:700;color:#78718f;font-size:12px}.modal{background:#33304928;backdrop-filter:blur(9px)}.sheet{position:relative;background:#fffefa;border:2px solid white;border-radius:28px;padding:30px;max-width:420px;width:100%;box-shadow:0 20px 80px #4642772e;text-align:center;max-height:90%;overflow:auto}.sheet .eyebrow{justify-content:center;margin-bottom:14px}.sheet h2{font-size:34px;letter-spacing:-1.3px;margin:0 0 12px}.sheet p{font-size:14px;line-height:1.6;color:#77758b;margin:0 0 23px}.sheet .primary{width:100%}.sheet .secondary{width:100%;margin-top:10px}.score-big{font-size:68px;line-height:1.1;font-weight:900;letter-spacing:-4px;color:#5d4aac;margin:8px 0 10px}.score-label{font-size:11px;letter-spacing:2px;font-weight:800;color:#8d849f}.results-row{display:flex;justify-content:center;gap:40px;margin:21px 0 25px}.results-row strong{display:block;font-size:22px;margin-bottom:4px}.results-row span{font-size:11px;color:#9287a1;font-weight:700}.close{position:absolute;right:14px;top:13px;border:0;background:#f0edf6;border-radius:50%;width:34px;height:34px;font-size:23px;color:#817393}.setting{display:flex;justify-content:space-between;align-items:center;text-align:left;padding:15px 0;border-top:1px solid #efebf3;font-size:15px;font-weight:700}.setting input{accent-color:#6752b8;width:23px;height:23px}.theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}.theme{background:#f5f2fa;border:2px solid transparent;border-radius:15px;padding:13px 5px 10px;color:#797089;min-height:92px;font-size:10px;font-weight:700}.theme[aria-pressed=true]{border-color:#6550b4;background:#eeebf9}.theme i{display:block;width:35px;height:35px;border-radius:10px;margin:auto auto 8px;box-shadow:inset 0 -5px #00000013}.theme small{display:block;font-size:9px;margin-top:4px;opacity:.75}.how-list{text-align:left;display:grid;gap:16px;margin:22px 0}.how-row{display:flex;gap:14px;align-items:center;font-size:13px;line-height:1.5;color:#7c738b}.how-row b{color:#3e3853}.how-icon{width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:20px;background:#d5f8e9;color:#268776}.how-icon.red{background:#ffdfdc;color:#ce6964}.how-icon.gold{background:#fff1c8;color:#ba9140}.toast{position:absolute;top:135px;left:50%;transform:translateX(-50%);font-size:16px;font-weight:900;background:white;color:#6850ae;border-radius:30px;padding:12px 24px;box-shadow:0 7px 0 #aaa4d32a;white-space:nowrap;opacity:0;transition:opacity .14s;z-index:8}.toast.visible{opacity:1}.play-bottom{position:absolute;left:0;right:0;bottom:max(18px,env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;padding:0 24px}.move-button{width:62px;height:52px;border-radius:17px;border:2px solid #ffffffcf;background:#ffffffa8;color:#6c6591;font-weight:900;font-size:27px;box-shadow:0 4px 0 #8d89b32b}.stack-readout{text-align:center;background:#ffffffcf;min-width:90px;border-radius:17px;padding:9px 16px;color:#379d85;font-weight:900;font-size:24px;box-shadow:0 4px 0 #8d89b31a}.stack-readout small{font-size:9px;color:#8b88a2;letter-spacing:1.5px;display:block;margin-bottom:2px}.stage-pill{position:absolute;left:50%;top:98px;transform:translateX(-50%);background:#ffffff9e;color:#877b9d;font-size:10px;letter-spacing:2px;font-weight:800;border-radius:20px;padding:9px 15px}.tutorial-tip{position:absolute;bottom:125px;left:50%;transform:translateX(-50%);border-radius:16px;padding:13px 20px;background:#ffffffd9;color:#625b7a;font-weight:700;font-size:13px;white-space:nowrap}.loading{position:absolute;inset:0;display:grid;place-content:center;text-align:center;background:#dceefa;z-index:20;color:#605492}.loading-mark{width:52px;height:52px;margin:0 auto 20px;border-radius:14px;background:#63d7b8;box-shadow:0 8px 0 #3ba98c,15px -13px 0 #a48ad8;transform:rotate(-10deg)}.loading p{font-weight:700;font-size:14px}.small-status{font-size:11px;line-height:1.5;color:#a47668;margin-top:12px;max-width:290px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:680px){.hud{left:15px;right:15px;top:max(15px,env(safe-area-inset-top))}.stat{min-width:85px;padding:8px 12px;border-radius:14px}.stat strong{font-size:23px}.stat small{font-size:8px}.stats{gap:7px}.hud-actions{gap:6px}.icon-button{height:43px;width:43px;border-radius:14px}.intro{left:24px;right:24px;top:clamp(100px,15vh,150px);max-width:none;text-align:center}.eyebrow{justify-content:center;font-size:9px;letter-spacing:2.5px;margin-bottom:18px}h1{font-size:74px;letter-spacing:-5px;margin-bottom:19px;line-height:.85}h1 span{display:inline}h1 .mint{display:block}.tagline{margin:0 auto 19px;font-size:13px;max-width:270px}.intro .primary{min-width:220px;min-height:55px;font-size:15px;padding:12px 23px}.sub-actions{justify-content:center;margin-top:11px}.secondary{min-height:42px;padding:9px 15px;font-size:12px}.control-hint{justify-content:center;margin-top:14px;font-size:10px}.bottom-note{left:18px;font-size:9px;bottom:19px}.pill-note{right:18px;bottom:15px;font-size:10px;padding:9px 12px}.sheet{padding:28px 22px;max-width:370px}.sheet h2{font-size:29px}.toast{top:115px;font-size:13px}.play-bottom{padding:0 18px}.stage-pill{top:87px;font-size:9px}.tutorial-tip{font-size:11px;padding:11px 14px}.small-status{margin-left:auto;margin-right:auto}.stat.gem{display:none}.theme-grid{gap:8px}}
+@media(max-height:520px) and (min-width:600px){.intro{top:90px;left:36px}.eyebrow{margin-bottom:10px}h1{font-size:66px;letter-spacing:-4px;margin-bottom:12px}.tagline{font-size:13px;margin-bottom:13px;max-width:250px}.intro .primary{min-height:47px;padding:9px 22px;font-size:14px}.sub-actions{margin-top:9px}.control-hint{display:none}.bottom-note,.pill-note{display:none}.stat{padding:6px 13px;min-width:90px}.stat strong{font-size:23px}.hud{top:13px;left:18px;right:18px}.stage-pill{top:70px}.play-bottom{bottom:10px}.move-button{height:43px;width:55px}.stack-readout{padding:5px 12px;font-size:21px}.sheet{padding:20px;max-width:460px}.sheet h2{font-size:27px}.score-big{font-size:46px}.results-row{margin:12px 0}.sheet p{margin-bottom:13px}.tutorial-tip{bottom:70px}.toast{top:80px}.theme-grid{margin:12px 0}.theme{min-height:78px;padding:8px 5px}.theme i{width:28px;height:28px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.combat-hud{position:absolute;top:101px;left:50%;transform:translateX(-50%);width:min(450px,calc(100% - 36px));padding:11px 15px;background:#fffffff0;border:1px solid white;border-radius:18px;box-shadow:0 5px 0 #a9a2c41a}.weapon-line{display:flex;align-items:center;gap:10px}.weapon-mark{width:36px;height:36px;display:grid;place-items:center;background:#f1e9ff;border-radius:12px;color:#8761c1;font-size:24px}.weapon-line small{display:block;font-size:8px;font-weight:800;letter-spacing:1.3px;color:#8b7c9f}.weapon-line strong{display:block;font-size:17px;color:#604d87;line-height:1.3}.power-pair{margin-left:auto;display:flex;gap:14px;text-align:right}.power-pair span{font-size:8px;letter-spacing:.6px;color:#8b7c9f;font-weight:800}.power-pair b{display:block;font-size:17px;color:#7e669d;letter-spacing:0;margin-top:3px}.power-pair span:first-child b{color:#288c79}.evolution-track{height:5px;background:#ece4f6;border-radius:6px;margin-top:9px;overflow:hidden}.evolution-track i{display:block;width:0;height:100%;background:linear-gradient(90deg,#7bced0,#ad83dc);border-radius:6px}.combat-hud>small{font-size:9px;display:block;text-align:right;margin-top:4px;color:#8d7c9f}.stage-pill{top:209px;white-space:nowrap}.boss-meter{position:absolute;top:204px;left:50%;transform:translateX(-50%);width:min(425px,calc(100% - 40px));border-radius:13px;background:#fff7f6e8;padding:10px 14px}.boss-meter>div:first-child{display:flex;justify-content:space-between;font-size:11px;color:#9b607e}.boss-track{height:7px;background:#f1dce4;border-radius:8px;margin:6px 0;overflow:hidden}.boss-track i{display:block;background:linear-gradient(90deg,#d9819e,#edb68a);height:100%;width:100%;border-radius:8px}.boss-meter small{font-size:9px;display:block;text-align:center;color:#a67c8e}.pulse-button{border:2px solid #fff;border-bottom:4px solid #bc9bdb;background:#9975c7;border-radius:16px;color:white;min-width:102px;height:55px;font-weight:900;padding:8px 15px;box-shadow:0 4px 15px #9969bd28}.pulse-button span,.pulse-button small{display:block}.pulse-button small{font-size:10px;margin-top:3px;font-weight:700}.pulse-button:disabled{opacity:.66;background:#d5c7e8;color:#726080;border-color:#eae3f5;box-shadow:none}.pulse-button.ready{background:#8860c0;border-bottom-color:#61458e}.play-bottom{gap:12px;max-width:600px;margin:auto}.stack-readout{min-width:86px}.weapon-gallery{display:grid;gap:8px;text-align:left;margin:20px 0}.weapon-card{display:flex;gap:12px;align-items:center;background:#f7f3fa;border:1px solid #eee5f6;border-radius:13px;padding:10px 12px}.weapon-card i{font-style:normal;display:grid;place-items:center;width:34px;height:34px;border-radius:10px;color:white;font-weight:900;flex:none}.weapon-card strong{font-size:13px;display:block;color:#665077}.weapon-card span{font-size:10px;color:#8d7b9b;display:block;margin-top:3px;line-height:1.4}.armory-sheet{max-width:480px}.how-icon.purple{background:#eadff8;color:#8561ab}.upgrade-sheet{max-width:600px}.upgrade-options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}.upgrade-card{border:2px solid #ebe2f6;border-bottom:5px solid #d8cce9;border-radius:20px;background:#f6f0fb;padding:17px 13px;color:#6b508b;text-align:left;min-height:165px;transition:transform .15s}.upgrade-card:hover{transform:translateY(-4px);border-color:#b8a0d7}.upgrade-card i{font-size:26px;font-style:normal;display:block;margin-bottom:15px}.upgrade-card strong{font-size:15px;display:block;margin-bottom:10px}.upgrade-card span{display:block;font-size:11px;line-height:1.6;color:#927ea4}.upgrade-card small{display:block;margin-top:10px;color:#438e7f;font-size:10px;font-weight:bold}.sheet .rest-note{font-size:11px;margin-bottom:2px}.result-loadout{background:#f4edf9;border-radius:12px;padding:10px;font-weight:bold;font-size:12px!important;margin-bottom:12px!important}.result-missions{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:12px}.result-missions span{font-size:9px;color:#867397;border:1px solid #ebdfef;border-radius:12px;padding:5px 8px}.result-missions span.done{background:#e6f7ee;color:#4f947b;border-color:#c6e5d5}.toast{top:auto;bottom:106px;max-width:calc(100% - 30px);text-align:center;font-size:13px;white-space:normal;z-index:8}.tutorial-tip{bottom:155px;font-size:12px;max-width:calc(100% - 24px);white-space:normal;text-align:center}.intro .sub-actions{gap:8px}.intro .secondary{font-size:12px}
+@media(max-width:680px){.combat-hud{top:83px;padding:10px 12px}.weapon-line{gap:8px}.weapon-line strong{font-size:15px}.power-pair{gap:9px}.power-pair b{font-size:15px}.power-pair span{font-size:7px}.stage-pill{top:180px;font-size:8px}.boss-meter{top:176px}.play-bottom{padding:0 14px;gap:8px}.move-button{width:48px;height:50px;flex:none}.stack-readout{min-width:65px;padding:8px 9px;font-size:22px}.stack-readout small{font-size:7px;letter-spacing:.7px}.pulse-button{min-width:95px;padding:8px 10px;font-size:12px;height:53px}.upgrade-options{grid-template-columns:1fr;gap:8px;margin:16px 0}.upgrade-card{min-height:0;padding:11px 13px;display:grid;grid-template-columns:30px 1fr;gap:3px 10px;border-radius:15px}.upgrade-card i{grid-row:span 3;margin:0;align-self:center}.upgrade-card strong{font-size:14px;margin:0}.upgrade-card span{font-size:10px;line-height:1.4}.upgrade-card small{margin-top:3px}.upgrade-sheet .sheet h2{font-size:28px}.tutorial-tip{font-size:10px}.toast{font-size:12px;bottom:101px}.intro .control-hint{font-size:9px}.intro .tagline{max-width:320px}.results-row{gap:26px}}
+@media(max-height:520px) and (min-width:600px){.combat-hud{top:84px;left:18px;transform:none;width:221px;padding:9px 10px}.weapon-mark{display:none}.weapon-line strong{font-size:13px}.power-pair{gap:7px}.power-pair span{font-size:6px}.power-pair b{font-size:13px}.weapon-line small{font-size:6px}.stage-pill{top:171px;left:18px;transform:none;font-size:8px;max-width:220px}.boss-meter{top:17px;width:290px;left:52%;font-size:10px}.boss-meter small{font-size:8px}.play-bottom{width:410px;left:50%;right:auto;transform:translateX(-50%);bottom:9px}.stack-readout{min-width:69px;font-size:20px}.pulse-button{height:46px;min-width:100px;font-size:12px}.tutorial-tip{bottom:70px;left:auto;right:20px;transform:none;max-width:200px}.toast{bottom:65px;font-size:11px}.upgrade-options{margin:10px 0;gap:8px}.upgrade-card{min-height:125px;padding:10px}.upgrade-card i{font-size:20px;margin-bottom:6px}.upgrade-card strong{font-size:13px;margin-bottom:6px}.upgrade-card span{font-size:10px}.upgrade-sheet{max-width:650px}.upgrade-sheet h2{font-size:25px}.upgrade-sheet .eyebrow{margin-bottom:6px}.upgrade-sheet p{font-size:11px;margin-bottom:8px}.upgrade-card small{margin-top:6px}}
+
+@media(max-width:680px) and (max-height:650px){.intro{top:94px}.intro h1{font-size:60px;letter-spacing:-4px;margin-bottom:12px}.intro .tagline{margin-bottom:14px}.intro .control-hint,.bottom-note{display:none}.intro .eyebrow{font-size:8px;letter-spacing:1.7px;margin-bottom:14px}.small-status{font-size:10px}.pill-note{font-size:9px}}
+@media(max-height:520px) and (min-width:600px){.intro{top:96px;max-width:350px;right:auto;text-align:left}.intro .eyebrow{display:none}.intro h1{font-size:52px;letter-spacing:-3px;white-space:nowrap;margin-bottom:13px}.intro h1 span{display:inline}.intro h1 span:first-child{margin-right:8px}.intro .tagline{font-size:12px;line-height:1.4;margin:0 0 12px}.intro .sub-actions{justify-content:flex-start}.intro .primary{min-height:44px}.intro .secondary{min-height:38px;padding:8px 14px}.intro .control-hint{display:none}}
+
+@media(max-height:520px) and (max-width:599px){.intro{top:83px}.intro .eyebrow,.intro .control-hint,.bottom-note,.pill-note{display:none}.intro h1{font-size:50px;letter-spacing:-3px;margin-bottom:10px}.intro .tagline{font-size:11px;margin-bottom:12px}.intro .primary{min-height:47px;padding:9px 20px}.intro .sub-actions{margin-top:8px}.intro .secondary{font-size:10px;min-height:36px;padding:7px 11px}.combat-hud{top:76px;padding:7px 10px}.stage-pill,.boss-meter{top:165px}.tutorial-tip{bottom:125px}.power-pair{gap:6px}}
+/* V3 collection: a paper atlas and a compact, deliberate equipment bench. */
+.text-button{border:0;background:#ffffff9e;color:#655681;font-size:11px;min-height:38px;padding:8px 12px;border-radius:12px;font-weight:700}.minor-actions{margin-top:8px}.collection-note{font-size:11px;color:#536678;line-height:1.5;margin-top:12px;max-width:330px}.persistent-status{position:absolute;bottom:3px;left:12px;right:12px;text-align:center;font-size:10px;color:#77453a;background:#fff6ebed;border-radius:9px;z-index:12;padding:3px 9px;pointer-events:none}.persistent-status:empty{display:none}.collection-sheet{max-width:760px;text-align:left}.collection-sheet>h2,.collection-sheet>p,.collection-sheet>h3{text-align:center}.collection-sheet h3{font-size:16px;color:#554773;margin:23px 0 12px}.collection-sheet .rest-note{margin:14px 0 0;font-size:10px}.world-tabs{display:grid;grid-template-columns:repeat(10,1fr);gap:6px}.world-tabs button{border:2px solid;background:#faf7ff;color:#67557c;border-radius:10px;min-height:40px;font-size:12px;font-weight:bold}.world-tabs [aria-pressed=true]{background:#605081;color:#fff}.world-heading{text-align:center;background:#f5f0f9;border-radius:18px;margin-top:16px;padding:14px}.world-heading>span{font-size:9px;font-weight:900;letter-spacing:2px}.world-heading h3{font-size:25px;margin:5px 0}.world-heading p{font-size:12px;margin:0}.level-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:16px 0}.level-card{border:2px solid #eee5f3;border-bottom:4px solid #d8cde5;background:#fff;border-radius:14px;min-height:66px;color:#756387;padding:9px 4px}.level-card strong{display:block;font-size:19px}.level-card span{display:block;font-size:9px;margin-top:4px}.level-card.guardian{border-style:dashed;border-bottom-style:solid}.level-card[aria-pressed=true]{border-color:#3a9b87;background:#edf9f3;color:#246e61}.level-brief{background:#f6f2fa;border-left:4px solid #9d85c1;border-radius:4px 15px 15px 4px;padding:16px;margin-bottom:17px}.level-brief h3{margin:4px 0 7px;font-size:20px}.level-brief p{margin:5px 0;font-size:12px}.level-brief #level-kicker{font-weight:800;letter-spacing:1px;font-size:9px}.level-brief #level-goal{color:#677e64;font-weight:700}.level-brief #level-loadout{font-size:10px;color:#76647f}.loadout-grid,.paint-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.gun-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.loadout-card{border:2px solid #ebe4f3;border-radius:16px;min-height:118px;background:#faf7fc;color:#6a577d;padding:13px 9px;text-align:center}.loadout-card strong{display:block;font-size:13px;margin:7px 0}.loadout-card span{display:block;font-size:10px;line-height:1.45}.loadout-card[aria-pressed=true]{background:#edf8f2;border-color:#529f88}.loadout-card:disabled{opacity:.65}.paint-swatch,.hero-swatch{font-style:normal;display:grid;place-items:center;width:40px;height:40px;margin:0 auto 5px;border:5px solid #fff3;border-radius:11px;color:#fff;font-weight:900}.paint-grid .paint-swatch{width:34px;height:24px;border-radius:7px}.paint-grid .loadout-card{min-height:91px}.paint-grid .loadout-card strong{font-size:10px}.hero-swatch{height:45px;box-shadow:0 5px 0 #49366018;color:#fff;font-size:18px;letter-spacing:4px}.hero-swatch.blob{border-radius:45% 45% 34% 34%;width:47px}.hero-swatch.hex{clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);width:49px}.hero-swatch.kite{clip-path:polygon(50% 0,100% 42%,72% 100%,28% 100%,0 42%)}.hero-swatch.sprout{border-radius:5px 26px 12px 26px;transform:rotate(-8deg)}.hero-swatch.orbit{border-radius:50%;box-shadow:10px -2px 0 -6px #edc983}.result-stars{color:#b48530;font-size:31px;letter-spacing:5px;margin:12px 0}.result-stars+.score-label{font-size:9px}#results .sheet{max-width:590px}#results .score-big{font-size:44px}#results .results-row{margin:13px 0 16px}#result-modules{margin:14px 0}#result-modules .upgrade-card{min-height:110px;padding:12px}#result-modules .upgrade-card strong{font-size:12px}#result-modules .upgrade-card span{font-size:10px}
+@media(max-width:680px){.collection-sheet{max-width:600px;padding:25px 17px}.collection-sheet h2{font-size:25px}.world-tabs{gap:4px;grid-template-columns:repeat(5,1fr)}.world-tabs button{min-height:34px}.world-heading{padding:10px}.world-heading h3{font-size:22px}.loadout-card{padding:9px 6px;min-height:108px}.level-grid{gap:6px}.level-card{min-height:60px}.loadout-grid,.paint-grid{gap:6px}.gun-grid{gap:7px}.collection-note{margin:10px auto 0;font-size:10px}.intro .control-hint{margin-top:8px}.intro .text-button{font-size:10px;padding:7px 9px;min-height:34px}.pill-note{font-size:9px}.intro .minor-actions{margin-top:7px}.collection-sheet .upgrade-card span{font-size:10px}.persistent-status{font-size:9px}#results .sheet{padding:24px 18px}#result-modules .upgrade-card{min-height:65px;display:block}#result-modules .upgrade-card strong{margin-bottom:5px}}
+@media(max-height:520px){.intro .collection-note{display:none}.intro .minor-actions{margin-top:5px}.intro .text-button{min-height:29px;padding:6px 9px}.collection-sheet{max-height:96%}.overlay{padding:12px}.world-tabs{grid-template-columns:repeat(10,1fr)}.loadout-grid{grid-template-columns:repeat(6,1fr)}.loadout-card{min-height:104px}.collection-sheet h3{margin-top:14px}}
+@media(max-width:350px){.intro .eyebrow{font-size:7px;letter-spacing:1px}.intro h1{font-size:56px}.intro .tagline{font-size:12px}.intro .collection-note{font-size:9px}.intro .text-button{font-size:9px;padding:6px}.loadout-grid{grid-template-columns:repeat(2,1fr)}}
+
+.modal{pointer-events:auto}
+</style>
+</head>
+<body>
+<canvas id="world" aria-label="Three lane sky track. Steer to aim at robots. Collect blocks and power cells. Avoid walls and warned lanes."></canvas>
+<main id="app">
+  <header class="hud"><div class="stats"><div class="stat"><small id="score-caption">PERSONAL BEST</small><strong id="score">0</strong></div><div class="stat gem"><small>CRYSTALS</small><strong id="gems">0</strong></div></div><div class="hud-actions"><button id="pause-button" class="icon-button" aria-label="Pause game" hidden><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg></button><button id="settings-button" class="icon-button" aria-label="Game settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="8" cy="7" r="3" fill="white"/><circle cx="16" cy="17" r="3" fill="white"/></svg></button></div></header>
+  <div id="combat-hud" class="combat-hud" hidden><div class="weapon-line"><span class="weapon-mark" aria-hidden="true">✦</span><div><small id="weapon-level">BLASTER 01 / 08</small><strong id="weapon-name">Pulse</strong></div><div class="power-pair"><span>YOUR POWER <b id="player-power">10</b></span><span>ENEMY HP <b id="enemy-power">×1.00</b></span></div></div><div class="evolution-track"><i id="energy-fill"></i></div><small id="energy-caption">10 energy → Twin Spark</small></div>
+  <div id="boss-meter" class="boss-meter" hidden><div><strong id="boss-name">Cloud Warden</strong><span id="boss-hp">230 / 230</span></div><div class="boss-track"><i id="boss-fill"></i></div><small>Steer toward the glowing core. Dodge the pink pulses.</small></div>
+  <div id="stage-label" class="stage-pill" hidden>SKYLINE 01</div>
+  <section id="menu" class="overlay menu" aria-label="Start menu"><div class="intro"><p class="eyebrow">THE SKY COURIER COLLECTION · V3</p><h1><span>STACK</span><span class="mint">SPRINT.</span></h1><p class="tagline">Ten worlds. A hundred little adventures.<br>Build a blaster. Find your own style.</p><button id="play-button" class="primary"><span id="play-label">Start level 1</span><span class="arrow" aria-hidden="true">→</span></button><div class="sub-actions"><button id="campaign-button" class="secondary">Level map</button><button id="hangar-button" class="secondary">My hangar</button></div><div class="sub-actions minor-actions"><button id="endless-button" class="text-button">Endless run</button><button id="themes-button" class="text-button">Endless skies</button><button id="help-button" class="text-button">How to play</button></div><div class="control-hint"><span class="keys" aria-hidden="true">← →</span><span>Auto-fire · drag to aim · SPACE for pulse</span></div><p id="collection-note" class="collection-note"></p></div><div class="bottom-note">A LITTLE COURAGE. A LONG WAY UP.</div><div class="pill-note">✦ 100 levels · 8 blasters · 6 explorers</div></section>
+  <div id="play-controls" class="play-bottom" hidden><button id="left-button" class="move-button" aria-label="Move left">←</button><div class="stack-readout"><small>YOUR STACK</small><span id="stack">6</span><span id="shield-label" hidden aria-label="Shield active"> ◈</span></div><button id="pulse-button" class="pulse-button" aria-label="Energy pulse" disabled><span>✦ PULSE</span><small id="pulse-label">35%</small></button><button id="right-button" class="move-button" aria-label="Move right">→</button></div>
+  <div id="tutorial" class="tutorial-tip" hidden>Drag to aim · auto-fire · grab purple power cells!</div>
+  <div id="toast" class="toast" role="status"></div>
+  <section id="pause" class="overlay modal" role="dialog" aria-modal="true" hidden aria-label="Paused"><div class="sheet"><p class="eyebrow">TAKE A BREATHER</p><h2>Nice view, right?</h2><p>Your stack is right where you left it.</p><button id="resume-button" class="primary">Keep going <span aria-hidden="true">→</span></button><button id="menu-button" class="secondary">Back to start</button></div></section>
+  <section id="results" class="overlay modal" role="dialog" aria-modal="true" hidden aria-label="Run results"><div class="sheet"><p id="result-eyebrow" class="eyebrow">THAT WAS A GOOD RUN</p><h2 id="result-title">Another little adventure?</h2><div id="result-stars" class="result-stars" hidden></div><div class="score-label">RUN SCORE</div><div id="result-score" class="score-big">0</div><div class="results-row"><div><strong id="result-distance">0m</strong><span>DISTANCE</span></div><div><strong id="result-best">0</strong><span>BEST SCORE</span></div><div><strong id="result-gems">0</strong><span>CRYSTALS</span></div></div><p id="result-reason"></p><p id="result-loadout" class="result-loadout"></p><div id="result-missions" class="result-missions"></div><button id="result-hangar" class="secondary" hidden>My hangar · equip your unlocks</button><div id="result-modules" class="upgrade-options" hidden></div><button id="next-button" class="primary" hidden>Next level →</button><button id="retry-button" class="secondary">Try again</button><button id="result-map" class="secondary" hidden>Level map</button><button id="result-home" class="secondary">Back to start</button></div></section>
+  <section id="settings" class="overlay modal" role="dialog" aria-modal="true" hidden aria-label="Settings"><div class="sheet"><button class="close" data-close="settings" aria-label="Close settings">×</button><p class="eyebrow">MAKE IT YOURS</p><h2>Your kind of flow.</h2><label class="setting" for="sfx-toggle">Sound effects<input type="checkbox" id="sfx-toggle" checked></label><label class="setting" for="music-toggle">Music<input type="checkbox" id="music-toggle" checked></label><label class="setting" for="motion-toggle">Extra motion and particles<input type="checkbox" id="motion-toggle" checked></label><label class="setting" for="assist-toggle">Campaign assist<input type="checkbox" id="assist-toggle"></label><p style="margin-top:18px">Assist starts on your next level: 20% slower travel and reduced damage. Your stars still count. All cues work without sound.</p><button class="secondary" data-close="settings">Done</button></div></section>
+  <section id="themes" class="overlay modal" role="dialog" aria-modal="true" hidden aria-label="Sky colours"><div class="sheet"><button class="close" data-close="themes" aria-label="Close sky colours">×</button><p class="eyebrow">NEW HEIGHTS. NEW HUES.</p><h2>A sky for every mood.</h2><p>Set a new personal best to unlock colours.<br>Every sky plays exactly the same.</p><div id="theme-grid" class="theme-grid"></div><button class="secondary" data-close="themes">Done</button></div></section>
+  <section id="help" class="overlay modal" role="dialog" aria-modal="true" hidden aria-label="Armory and instructions"><div class="sheet armory-sheet"><button class="close" data-close="help" aria-label="Close instructions">×</button><p class="eyebrow">YOUR POWER HAS A PATH</p><h2>Build a better blaster.</h2><p>Firing is automatic. Steer to aim. Campaign clears unlock permanent blasters, explorers and finishes in My hangar. In Endless, power cells evolve your blaster during the run.</p><div id="weapon-gallery" class="weapon-gallery"></div><div class="how-list"><div class="how-row"><span class="how-icon">+3</span><span><b>Your stack is your health.</b><br>Collect + blocks. Walls, gaps and active gates cost blocks.</span></div><div class="how-row"><span class="how-icon purple">✦</span><span><b>Save a pulse for trouble.</b><br>When charged, tap PULSE or press Space to clear robot pulses and blast nearby robots.</span></div><div class="how-row"><span class="how-icon gold">◈</span><span><b>Guardians guard the next sky.</b><br>Aim at the lit core, dodge the warned lanes, then choose a free upgrade. Every first campaign clear also grants one permanent module point.</span></div></div><p>Drag / swipe, ← → or A / D to steer. P pauses. Pink stripes warn of incoming pulses. Blue shields block one hit. Golden bolts give 6 seconds of rapid fire.</p><button class="secondary" data-close="help">Ready to ride</button></div></section>
+  <section id="upgrade" class="overlay modal" role="dialog" aria-modal="true" hidden aria-label="Choose an upgrade"><div class="sheet upgrade-sheet"><p class="eyebrow">GUARDIAN CLEARED</p><h2>Your run. Your upgrade.</h2><p id="upgrade-caption">Choose one free module for the next sky.</p><div id="upgrade-options" class="upgrade-options"></div><p id="rest-note" class="rest-note">A good place to take a break. Your run is saved.</p><button id="upgrade-home" class="secondary">Back to start</button></div></section>
+  <section id="campaign" class="overlay modal" role="dialog" aria-modal="true" hidden aria-label="Campaign level map"><div class="sheet collection-sheet"><button class="close" data-close="campaign" aria-label="Close level map">×</button><p class="eyebrow">YOUR SKY ATLAS</p><h2>One hundred adventures.</h2><p id="map-summary"></p><div id="world-tabs" class="world-tabs" aria-label="Select a world"></div><div class="world-heading"><span id="world-number"></span><h3 id="world-name"></h3><p id="world-tag"></p></div><div id="level-grid" class="level-grid" aria-label="Choose a level"></div><div class="level-brief"><p id="level-kicker"></p><h3 id="level-title"></h3><p id="level-tip"></p><p id="level-goal"></p><p id="level-loadout"></p></div><button id="launch-level" class="primary">Start level</button><p class="rest-note">Starting a level replaces your current run checkpoint. Earned stars and unlocks stay.</p></div></section>
+  <section id="hangar" class="overlay modal" role="dialog" aria-modal="true" hidden aria-label="Explorer hangar"><div class="sheet collection-sheet"><button class="close" data-close="hangar" aria-label="Close hangar">×</button><p class="eyebrow">BUILT FOR YOUR KIND OF ADVENTURE</p><h2>Make it yours.</h2><p id="hangar-summary"></p><h3>Choose your explorer</h3><div id="hero-grid" class="loadout-grid"></div><h3>Colour finishes</h3><div id="paint-grid" class="paint-grid"></div><h3>Campaign blaster</h3><div id="gun-grid" class="gun-grid"></div><h3>Permanent modules</h3><p id="module-note"></p><div id="module-grid" class="upgrade-options"></div><p class="rest-note">Loadout changes apply on your next run. Explorer shapes and colours share the same hitbox.</p><button class="secondary" data-close="hangar">Ready for the sky</button></div></section>
+  <div id="save-status" class="persistent-status" role="status"></div>
+  <div id="loading" class="loading"><div class="loading-mark"></div><p id="loading-text">Finding a little blue sky…</p></div>
+  <p id="accessible-status" class="sr-only" aria-live="polite"></p>
+</main>
+
+<script>
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.StackContent=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
+ 'use strict';
+ // Authored content: each record has its own route sequence, objective and lesson.
+ const WORLDS=[
+  {name:'Cloud Gardens',tag:'A little courage. A long way up.',prop:'garden',color:'#35a990',sky:'#cdeaf6',haze:'#f5fcf7',road:'#fff8e7',side:'#83b7a6',accent:'#347e70',boss:'Garden Warden',tip:'Aim at scouts. Green blocks rebuild your stack.'},
+  {name:'Coral Foundry',tag:'Hot metal. Cool timing.',prop:'factory',color:'#dd7b66',sky:'#f5c9b5',haze:'#fff0d8',road:'#fbead9',side:'#b98b96',accent:'#934f64',boss:'Copper Colossus',tip:'Shield bots open briefly. Pulse breaks through armor.'},
+  {name:'Laser Circuit',tag:'Read the light. Find the opening.',prop:'circuit',color:'#8283e0',sky:'#c7c9ec',haze:'#eeeaff',road:'#f2eefa',side:'#9691bf',accent:'#63549b',boss:'Circuit Maestro',tip:'Laser gates alternate ON and SAFE. A side route stays open.'},
+  {name:'Clockwork Quay',tag:'The road has a rhythm.',prop:'gears',color:'#b88a4d',sky:'#ead6b2',haze:'#fff6e4',road:'#fbf0d9',side:'#b9a081',accent:'#806546',boss:'Clockwork Keeper',tip:'Striped shutters slide. Drones show their next lane.'},
+  {name:'Sunforge Reactor',tag:'Catch the spark. Make it count.',prop:'reactor',color:'#cd873e',sky:'#f6d890',haze:'#fff7d6',road:'#fff5dc',side:'#c2a577',accent:'#96652e',boss:'Solar Engine',tip:'PLUS gates grant energy and rapid fire. Use the burst on groups.'},
+  {name:'Drone Harbor',tag:'Keep an eye on the horizon.',prop:'harbor',color:'#579bc4',sky:'#b9dfe7',haze:'#e6f9fb',road:'#edf8f6',side:'#82a5b9',accent:'#426f91',boss:'Harbor Overseer',tip:'Trackers warn your lane before firing. Move after the warning.'},
+  {name:'Crystal Caverns',tag:'One beam. A whole constellation.',prop:'crystal',color:'#ba7fc1',sky:'#dfc4ea',haze:'#fff0fa',road:'#f9eefb',side:'#b296bf',accent:'#825992',boss:'Crystal Monarch',tip:'Splitters release tiny bots. Piercing and spread help clear them.'},
+  {name:'Moonrail Express',tag:'Momentum with a moonlit view.',prop:'moon',color:'#748ccb',sky:'#bacbe8',haze:'#e3ebff',road:'#e9effc',side:'#8297bd',accent:'#526994',boss:'Moonrail Conductor',tip:'Arrow pads briefly speed up the track and charge your pulse.'},
+  {name:'Ironwood Fortress',tag:'Choose your target. Change the battle.',prop:'fortress',color:'#71997c',sky:'#bcd9c3',haze:'#f2f7df',road:'#eef0dc',side:'#8d9e83',accent:'#557461',boss:'Ironwood Regent',tip:'Repair bots restore nearby robots. Clear the healer first.'},
+  {name:'Prism Citadel',tag:'Everything you learned. One last climb.',prop:'prism',color:'#aa81ca',sky:'#d9cbed',haze:'#fff1e7',road:'#faf0f8',side:'#b198c4',accent:'#7b579b',boss:'The Prism Architect',tip:'Mixed enemy squads test aiming, movement and pulse timing.'}
+ ];
+ const HEROES=[
+  {name:'Pip',shape:'courier',need:0,detail:'The sky courier. A trusty cap and a brave little wave.'},
+  {name:'Mochi',shape:'blob',need:5,detail:'A round, soft explorer with tiny antennae.'},
+  {name:'Hex',shape:'hex',need:15,detail:'Six sides, one bright visor. Built for adventure.'},
+  {name:'Kite',shape:'kite',need:30,detail:'A paper-wing pilot with a sharp silhouette.'},
+  {name:'Sprout',shape:'sprout',need:50,detail:'Leaf ears, a little seed pack and plenty of curiosity.'},
+  {name:'Orbit',shape:'orbit',need:75,detail:'A floating orb with its own miniature moon.'}
+ ];
+ const PAINTS=[
+  {name:'Mint Courier',need:0,body:'#58cdb1',trim:'#443c6c',glow:'#fff1ae'},
+  {name:'Peach Soda',need:3,body:'#ef9a77',trim:'#75517c',glow:'#ffedb0'},
+  {name:'Blueberry Ink',need:8,body:'#898bda',trim:'#343a67',glow:'#b3f7e5'},
+  {name:'Copper Candy',need:15,body:'#df9770',trim:'#754c5d',glow:'#ffdfa2'},
+  {name:'Circuit Pop',need:23,body:'#81c4de',trim:'#4d498b',glow:'#f5beeb'},
+  {name:'Clockwork Cream',need:32,body:'#ead4a3',trim:'#6e5c62',glow:'#b6eacf'},
+  {name:'Solar Sherbet',need:42,body:'#f1c268',trim:'#9b5872',glow:'#fff5cb'},
+  {name:'Harbor Glass',need:52,body:'#8edacc',trim:'#436b87',glow:'#dcefff'},
+  {name:'Amethyst Mist',need:62,body:'#c09bdc',trim:'#694d80',glow:'#c0f4f1'},
+  {name:'Moonmilk',need:72,body:'#e0e7f6',trim:'#67739b',glow:'#f6d897'},
+  {name:'Ironwood Moss',need:82,body:'#a7c39a',trim:'#4d746a',glow:'#eee6ad'},
+  {name:'Prism Champion',need:100,body:'#b99bdd',trim:'#655782',glow:'#fff1bc'}
+ ];
+ const GUN_UNLOCKS=[0,5,15,25,40,55,70,85];
+ const OBJECTIVES={kills:'Robots cleared',energy:'Energy collected',gems:'Crystals collected',combo:'Best clear combo',pulse:'Pulses used',gates:'Power gates collected',clean:'Maximum hits taken'};
+ // title | route beats | secondary objective:target | accent rule | tactical tip
+ const CHAPTERS=[
+ [
+  'First Light|harvest duel harvest treasure|energy:12|gentle|Drag to aim. Your blaster fires by itself.',
+  'Aiming Practice|duel harvest duel fork|kills:5|steady|Stay in a robot lane long enough to clear it.',
+  'Crystal Detour|treasure duel harvest slalom|gems:4|rich|Crystals are optional. Pick a route you can handle.',
+  'Two Ways Home|fork gap harvest duel|combo:4|steady|Look beyond the next row before steering.',
+  'The Garden Gate|duel fork harvest bulwark|kills:6|mini|A mini guardian tests your aim. Dodge the warning stripe.',
+  'Twin Trails|duel fork treasure harvest|kills:8|steady|Twin Spark is unlocked. Choose it in the Hangar.',
+  'Open Air|gap harvest gap duel|clean:2|gentle|Gaps cost blocks. The marked side path stays solid.',
+  'Little Parade|duel duel fork treasure|combo:6|steady|Clear several scouts without taking damage.',
+  'Pocketful of Sky|treasure gap harvest fork|energy:28|rich|Gather power on the way to the garden guardian.',
+  'Garden Warden|fork bulwark duel harvest|kills:8|boss|Aim at the lit core. Warning stripes show incoming attacks.'
+ ],[
+  'Shield School|shield harvest duel shield|kills:7|gentle|Blue shields cycle. Fire when the visor opens.',
+  'Copper Avenue|bulwark harvest shield treasure|energy:28|steady|Armored bots absorb some damage. Pulse is especially useful.',
+  'Foundry Forks|fork shield gap harvest|combo:6|steady|Pick the lane with the clearest line of fire.',
+  'Cooling Channel|treasure shield harvest gap|gems:5|rich|A quieter route for collecting crystals.',
+  'Furnace Foreman|bulwark shield fork harvest|pulse:1|mini|Charge a pulse before the mini guardian arrives.',
+  'Three Bright Lines|fork shield duel harvest|kills:10|steady|Arc Splitter reaches the neighboring lanes.',
+  'Armor Alley|bulwark shield bulwark treasure|kills:8|armor|Prioritize the nearest armored robot.',
+  'Window of Light|shield gap shield harvest|clean:2|steady|Learn the open-shield rhythm without rushing.',
+  'Copper Cascade|duel shield fork bulwark treasure|combo:7|steady|Use a spread weapon for split formations.',
+  'Copper Colossus|bulwark shield fork harvest|pulse:2|boss|The Colossus changes its pattern halfway through.'
+ ],[
+  'Green Means Go|laser harvest duel treasure|clean:3|gentle|SAFE gates are passable. ON gates cost three blocks.',
+  'Alternating Current|laser slalom harvest shield|energy:30|steady|Watch the laser cycle and leave room to change lanes.',
+  'Neon Orchard|treasure laser harvest duel|gems:6|rich|Pickups guide you around active laser gates.',
+  'Sentry Signals|crossfire harvest laser duel|kills:9|steady|Sentry stripes warn of a pulse in their lane.',
+  'Signal Check|laser crossfire shield harvest|pulse:1|mini|Pulse clears incoming projectiles as well as robots.',
+  'Long Beam Lane|bulwark shield laser harvest|kills:10|steady|Prism Lance reaches robots behind the front target.',
+  'Crossed Wires|crossfire laser fork harvest|clean:3|crossfire|Read projectile warnings before choosing a pickup.',
+  'Charge Corridor|harvest laser crossfire treasure|energy:40|charged|Extra cells make pulse available more often.',
+  'Electric Waltz|shield laser crossfire gap harvest|combo:8|steady|Mix shield timing, gates and precise aiming.',
+  'Circuit Maestro|laser crossfire bulwark harvest|pulse:2|boss|The Maestro sweeps across lanes. Watch the next stripe.'
+ ],[
+  'Sliding Doors|shutter harvest duel treasure|clean:3|gentle|Striped shutters move sideways before they get close.',
+  'Clockwork Collection|shutter treasure harvest shield|gems:6|rich|The barrier moves; your target lane remains under your control.',
+  'First Flight|drone harvest duel shutter|kills:9|steady|Drones mark their next lane with an arrow.',
+  'Tick and Tock|shutter drone shield harvest|combo:7|steady|Read the movement before choosing where to aim.',
+  'Quay Inspector|drone shutter bulwark harvest|pulse:1|mini|New Mk II robots have tougher shells and faster shield cycles.',
+  'Brass Migration|drone fork shutter treasure|kills:12|swarm|Two moving threats share the road. Keep looking ahead.',
+  'Quiet Clocktower|harvest shutter treasure gap|clean:2|gentle|A lighter challenge between combat sections.',
+  'Pendulum Street|shutter laser drone harvest|energy:38|steady|Match moving barriers with the laser rhythm.',
+  'Gears in Motion|drone shield crossfire shutter harvest|combo:9|steady|Use pulse to make space when formations overlap.',
+  'Clockwork Keeper|shutter drone bulwark harvest|pulse:2|boss|Watch for paired warnings, then return to the lit core.'
+ ],[
+  'Plus One Spark|amp harvest duel treasure|gates:3|gentle|PLUS gates grant cells and a short rapid-fire burst.',
+  'Solar Bloom|amp treasure harvest shield|energy:45|charged|Chain energy pickups to recharge your pulse.',
+  'Nova Nursery|fork amp drone harvest|kills:12|swarm|Nova Array is unlocked: spread and penetration together.',
+  'Sunlit Choice|amp bulwark gap treasure|gates:4|steady|Use the burst against a tougher robot lane.',
+  'Reactor Watch|amp crossfire shield harvest|pulse:2|mini|A mini guardian checks your defensive pulse timing.',
+  'Heat Exchange|laser amp shutter harvest|clean:3|steady|Bright pickups never hide the hazard markings.',
+  'Golden Harvest|treasure harvest amp duel|gems:7|rich|Take a calmer reward route before the next fight.',
+  'Power Parade|amp fork bulwark drone harvest|kills:14|swarm|Keep the bonus fire rate working on groups.',
+  'Sunforge Relay|amp laser shield crossfire harvest|gates:5|charged|Five PLUS gates form an optional route challenge.',
+  'Solar Engine|amp bulwark crossfire harvest|pulse:2|boss|A low-health engine switches its targeting rhythm.'
+ ],[
+  'Follow the Stripe|snipe harvest duel treasure|clean:3|gentle|Trackers mark your current lane. Move after the mark appears.',
+  'Harbor Crossings|snipe drone harvest gap|kills:11|steady|Tracking shots and moving bots demand different responses.',
+  'Dockside Crystals|treasure snipe harvest shutter|gems:7|rich|Leave the treasure lane when its warning appears.',
+  'Two Watchtowers|crossfire snipe shield harvest|pulse:2|crossfire|Save one pulse for crowded projectile lanes.',
+  'Harbor Patrol|snipe drone bulwark harvest|kills:13|mini|Aim during the quiet interval after a guardian volley.',
+  'Comet Delivery|fork snipe drone amp|kills:14|swarm|Comet Driver splashes nearby bots at the impact row.',
+  'Safe Anchorage|harvest treasure drone gap|clean:2|gentle|A short recovery route rewards precise movement.',
+  'Signal Harbor|snipe laser crossfire harvest|combo:10|steady|Watch the warnings rather than chasing every cell.',
+  'Departure Window|snipe shutter drone amp harvest|energy:48|charged|Use power gates when the firing lanes are clear.',
+  'Harbor Overseer|snipe crossfire bulwark harvest|pulse:2|boss|The Overseer alternates tracking and sweeping attacks.'
+ ],[
+  'A Bot in Two|split harvest duel treasure|kills:12|gentle|Splitters leave smaller bots. Keep firing through the formation.',
+  'Crystal Thread|split shield harvest gap|combo:10|steady|Piercing shots reach the back of a formation.',
+  'Amethyst Pocket|treasure split harvest laser|gems:8|rich|Crystal routes are optional; a clear finish still earns a star.',
+  'Small but Many|swarm split drone harvest|kills:18|swarm|Spread fire trades focus for wider coverage.',
+  'Cavern Echo|split snipe shield harvest|pulse:2|mini|Mk III robots carry three rank marks and stronger patterns.',
+  'Mirror Vein|split shutter laser harvest|clean:3|steady|Movement and split targets share the same narrow route.',
+  'Power Geodes|amp split harvest treasure|energy:52|charged|Clear the smaller robots to refill pulse charge.',
+  'Crystal Choir|split split fork harvest|kills:20|swarm|Choose a crowd-control blaster before launching.',
+  'Last Reflection|split shield snipe laser harvest|combo:12|steady|An accurate lane change is worth more than one extra pickup.',
+  'Crystal Monarch|split bulwark snipe harvest|pulse:2|boss|The Monarch alternates between a sweep and a double warning.'
+ ],[
+  'Moonrail Departure|rush harvest duel treasure|clean:3|gentle|Arrow pads add a brief, clearly marked speed boost.',
+  'Echo Platform|rush fork harvest shield|kills:14|steady|Echo Link chains some damage to another robot.',
+  'Lunar Baggage|treasure rush harvest drone|gems:8|rich|Collect crystals without following them into warning stripes.',
+  'Passing Lights|rush laser crossfire harvest|energy:48|steady|Laser rhythms continue during a speed boost.',
+  'Ticket Inspector|rush shield snipe harvest|pulse:2|mini|Keep your pulse for the guardian volley.',
+  'Express Formation|rush drone split harvest|kills:20|swarm|Burst sections include extra space between rows.',
+  'Moonmilk Rest|harvest treasure gap duel|clean:2|gentle|A calm stretch rewards a clean finish.',
+  'Midnight Transfer|rush shutter snipe amp harvest|gates:4|charged|Choose between the power gate and the safer resource lane.',
+  'Last Train Up|rush split laser crossfire harvest|combo:12|steady|Combine movement, aim and defensive pulse use.',
+  'Moonrail Conductor|rush bulwark snipe harvest|pulse:3|boss|The Conductor changes cadence at half health.'
+ ],[
+  'Repair Crew|medic harvest duel treasure|kills:12|gentle|Repair bots heal nearby robots. Aim at the plus symbol first.',
+  'Ironwood Gate|medic shield harvest bulwark|combo:10|armor|A healer behind armor changes your target priority.',
+  'Moss and Metal|treasure medic shutter harvest|gems:8|rich|Look for the little repair pulse linking robots.',
+  'Living Formation|medic split drone harvest|kills:20|swarm|Choose between healer focus and clearing smaller bots.',
+  'Fortress Captain|medic snipe shield harvest|pulse:2|mini|Repairs make a coordinated pulse especially valuable.',
+  'Aurora Opening|medic bulwark amp harvest|kills:16|steady|Aurora Rail pierces a full line and weakens armor resistance.',
+  'Garden Within|harvest treasure medic gap|clean:2|gentle|A short precision level before the fortress siege.',
+  'Fortress Relay|medic laser snipe amp harvest|gates:5|crossfire|Watch projectile stripes while taking the power route.',
+  'Repair Denied|medic medic split shield harvest|combo:14|steady|Prioritize support robots, then clear the front line.',
+  'Ironwood Regent|medic bulwark snipe harvest|pulse:3|boss|The Regent combines aimed shots with protected-lane volleys.'
+ ],[
+  'Prism Arrival|laser drone amp harvest|energy:50|steady|Every icon uses the same meaning you learned in earlier worlds.',
+  'Seven-Sided Trouble|medic split shield harvest|kills:20|swarm|Build a plan for support, armor and smaller bots together.',
+  'Chromatic Cargo|treasure shutter snipe harvest|gems:9|rich|A distinct collectible route through moving hazards.',
+  'Perfect Signal|laser snipe crossfire amp harvest|clean:3|crossfire|Read both the road and the ranged attack warnings.',
+  'Architect Apprentice|medic drone bulwark harvest|pulse:3|mini|The last mini guardian previews the final attack language.',
+  'Power Symphony|amp rush split harvest|gates:5|charged|Use energy and burst windows to control the crowded track.',
+  'A Breath of Sky|harvest treasure shield gap|clean:2|gentle|A deliberate quieter level before the last ascent.',
+  'The Long Ascent|shutter medic split snipe harvest|kills:22|steady|Pick your targets carefully and keep a route open.',
+  'Everything Glows|laser rush medic split amp harvest|combo:15|swarm|Bring your favorite blaster and your best timing.',
+  'The Prism Architect|medic split snipe amp harvest|pulse:3|boss|Two phases. Read the warning, dodge, then aim at the core.'
+ ]];
+ const LEVELS=CHAPTERS.flatMap((chapter,w)=>chapter.map((line,i)=>{
+  const [name,beats,goal,modifier,tip]=line.split('|'),[objective,target]=goal.split(':'),id=w*10+i+1;
+  return {id,world:w,name,beats:beats.split(' '),objective,target:+target,modifier,tip,
+   seed:(0x51a7+id*7919)>>>0,boss:i===4||i===9,mini:i===4,
+   length:id===1?280:id===2?350:560+w*18+i*9,speed:13.4+w*.36+(modifier==='gentle'?-.6:0),
+   rank:Math.min(3,1+Math.floor(w/3)),starHealth:Math.min(14,8+Math.floor(w/2)),
+   theme:w,lesson:WORLDS[w].tip};
+ }));
+ return {WORLDS,HEROES,PAINTS,GUN_UNLOCKS,OBJECTIVES,LEVELS};
+});
+
+</script>
+<script>
+(function(root,factory){const api=factory(typeof module==='object'&&module.exports?require('./content.js'):root.StackContent);if(typeof module==='object'&&module.exports)module.exports=api;else root.StackCore=api;})(typeof globalThis!=='undefined'?globalThis:this,function(Content){
+ 'use strict';
+ const VERSION=3,VIEW=112;
+  const THEMES = [
+    {name:'Daydream', need:0, sky:'#cee9f7', haze:'#f1f9ff', road:'#f9f5f1', side:'#8986c7', edge:'#c7c3f1', cube:'#52dbbc', top:'#93f3d5', dark:'#25a88e', accent:'#5537b5'},
+    {name:'Peach fizz', need:500, sky:'#ffd5b7', haze:'#fff3dd', road:'#fff5df', side:'#df858a', edge:'#f6b3a4', cube:'#ac95ff', top:'#ddd2ff', dark:'#7760cf', accent:'#a33c72'},
+    {name:'Blue hour', need:1500, sky:'#bcc2ee', haze:'#e0e1ff', road:'#eeefff', side:'#7777b3', edge:'#a9a7df', cube:'#ffca76', top:'#ffe7ad', dark:'#df994a', accent:'#42309b'},
+    {name:'Mint city', need:3000, sky:'#b9e8db', haze:'#e6fff0', road:'#e8f4e6', side:'#72aa9d', edge:'#9ad8c7', cube:'#f49bb7', top:'#ffd5e0', dark:'#cd6b8b', accent:'#396b64'},
+    {name:'Rose cloud', need:6000, sky:'#ead0ee', haze:'#fff0f5', road:'#fff1f6', side:'#b291c3', edge:'#dab8e9', cube:'#78c8f2', top:'#c6ebff', dark:'#479bcd', accent:'#753c94'},
+    {name:'Golden sky', need:10000, sky:'#f7dc96', haze:'#fff4ce', road:'#fff6dd', side:'#be9e67', edge:'#e4c895', cube:'#75c0a3', top:'#bdf2cd', dark:'#428e78', accent:'#796032'}
+  ];
+ const WEAPONS=[
+  {name:'Pulse',need:0,damage:3,interval:.30,lanes:[0],pierce:1,color:'#45badd',description:'A precise energy bolt.'},
+  {name:'Twin Spark',need:10,damage:7,interval:.28,lanes:[0],pierce:1,color:'#38cba7',description:'Twin barrels. More power in one lane.'},
+  {name:'Arc Splitter',need:30,damage:8,interval:.27,lanes:[-1,0,1],pierce:1,color:'#9171e2',description:'Covers all three lanes. Centre hits hardest.'},
+  {name:'Prism Lance',need:65,damage:12,interval:.25,lanes:[0],pierce:3,color:'#ed9259',description:'Pierces three robots in a line.'},
+  {name:'Nova Array',need:110,damage:14,interval:.24,lanes:[-1,0,1],pierce:2,color:'#e8b64e',description:'Three lanes with two-target penetration.'},
+  {name:'Comet Driver',need:175,damage:32,interval:.52,lanes:[0],pierce:1,color:'#e28a9e',splash:true,description:'Slow, heavy shots splash adjacent robots on impact.'},
+  {name:'Echo Link',need:250,damage:17,interval:.29,lanes:[0],pierce:1,color:'#68bdba',chain:true,description:'An aimed beam chains to a second nearby robot.'},
+  {name:'Aurora Rail',need:340,damage:23,interval:.32,lanes:[0],pierce:5,color:'#b59ce6',armor:true,description:'Long piercing rail. Reduces armor and shield resistance.'}
+ ];
+ const ENEMIES={scout:{hp:9,cost:3,color:'#b493e8',name:'Scout',tip:'Aim early to clear the lane.'},tank:{hp:28,cost:6,color:'#e8a76c',name:'Bulwark',tip:'Armored shell. Pulse ignores its resistance.'},guard:{hp:17,cost:4,color:'#7faee3',name:'Shield Bot',tip:'Its shield opens on a steady rhythm.'},turret:{hp:15,cost:4,color:'#dd849e',name:'Sentry',tip:'Warns, then fires down its lane.'},drone:{hp:14,cost:3,color:'#78bdba',name:'Drifter',tip:'Moves sideways after showing an arrow.'},sniper:{hp:19,cost:4,color:'#d898b4',name:'Tracker',tip:'Marks your lane before launching a pulse.'},splitter:{hp:24,cost:4,color:'#b39bdb',name:'Splitter',tip:'Leaves two smaller bots when cleared.'},mite:{hp:5,cost:2,color:'#d4b7e8',name:'Sparklet',tip:'Small bots favor spread fire.'},medic:{hp:20,cost:3,color:'#82b99a',name:'Repair Bot',tip:'Restores nearby bots. Prioritize the plus symbol.'}};
+ const BIOMES=['Cloud Gardens','Coral Circuit','Violet Foundry','Mint Horizon','Rose Nebula','Solar Drift'];
+ const UPGRADES=[{id:'power',name:'Power Coil',icon:'✦',text:'+22% base damage. Break tougher robots.'},{id:'rapid',name:'Rapid Relay',icon:'»',text:'Fire faster. Shorter time between beams.'},{id:'rebuild',name:'Rebuild Kit',icon:'▣',text:'+2 stack capacity, +8 blocks and one shield.'}];
+ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),finite=(x,a,b)=>Number.isFinite(x)&&x>=a&&x<=b;
+ function random(s){let x=s.rng|0;x^=x<<13;x^=x>>>17;x^=x<<5;s.rng=x>>>0;return s.rng/4294967296;}
+ function enemyScale(stage){return Math.min(14,1+(stage-1)*.34);}
+ function combatScale(s){const n=s.level-1;return s.mode==='campaign'?1+n*.095+Math.pow(n/25,2)*.6:enemyScale(s.stage);}
+ function stats(s){const w=WEAPONS[s.gun],campaign=s.mode==='campaign',scale=campaign?(1+s.upgrades.power*.04)*(1+(s.reactorRank-1)*.012):(1+s.upgrades.power*.22)*(1+(s.stage-1)*.10),interval=w.interval/(campaign?1+s.upgrades.rapid*.025:Math.min(2.5,1+s.upgrades.rapid*.12))/(s.overdrive>0?1.5:1);return {damage:w.damage*scale,interval,power:Math.round(w.damage*scale*10/interval)/10,maxStack:Math.min(30,18+s.upgrades.rebuild*(campaign?.6:2))|0};}
+ const item=(kind,amount)=>({kind,amount:amount||0});
+ function robot(s,type,z,lane){const cfg=ENEMIES[type],rank=s.mode==='campaign'?Content.LEVELS[s.level-1].rank:1,hp=Math.round(cfg.hp*combatScale(s)*(1+(rank-1)*.15));return {kind:'enemy',type,rank,amount:Math.min(8,cfg.cost+(rank-1)),hp,maxHp:hp,clock:random(s)*1.3,shot:false,warn:0,flash:0,aim:0,moveWarn:0,moveTo:-1,moved:false,heal:1.8,healing:0};}
+ function newRun(seed){
+  const s={version:3,mode:'endless',level:0,hero:0,paint:0,reactorRank:1,assist:false,won:false,hits:0,maxCombo:0,pulses:0,gates:0,speedBoost:0,beat:0,rng:(seed>>>0)||174197,distance:0,next:52,rows:[],target:0,x:0,stack:6,gems:0,score:0,stage:1,combo:0,shield:0,ended:false,reason:'',collected:0,time:0,energy:0,gun:0,kills:0,bosses:0,phase:'run',boss:null,nextBoss:260,fire:0,charge:35,overdrive:0,invincible:0,upgrades:{power:0,rapid:0,rebuild:0},beams:[],orbs:[],lastPattern:-1,missions:0};
+  s.rows=[{z:12,pattern:0,lanes:[item('cube',2),item('energy',4),item('gem',1)]},{z:27,pattern:1,lanes:[item('cube',3),robot(s,'scout',27,0),item('energy',4)]},{z:43,pattern:2,lanes:[item('energy',4),item('cube',2),robot(s,'scout',43,1)]}];fill(s);return s;
+ }
+ function fill(s){
+  if(s.mode==='campaign'){fillCampaign(s);return;}
+  if(s.phase!=='run')return;
+  while(s.next<s.distance+VIEW+18&&s.next<s.nextBoss-18){
+   let pattern=Math.floor(random(s)*8);if(pattern===s.lastPattern)pattern=(pattern+1)%8;s.lastPattern=pattern;
+   const safe=Math.floor(random(s)*3),a=[null,null,null],stage=s.stage;
+   if(pattern===0){a[0]=item('cube',3);a[1]=item('energy',4);a[2]=item('gem',1);}
+   if(pattern===1){a.fill(null);a[(safe+1)%3]=robot(s,'tank');a[(safe+2)%3]=item('wall',3+Math.min(4,stage));}
+   if(pattern===2){a[(safe+1)%3]=robot(s,'scout');a[(safe+2)%3]=robot(s,'scout');}
+   if(pattern===3){a[(safe+1)%3]=item('gap');a[(safe+2)%3]=robot(s,stage>1?'guard':'scout');}
+   if(pattern===4){a[(safe+1)%3]=robot(s,stage>1?'turret':'tank');a[(safe+2)%3]=item('gem',1);}
+   if(pattern===5){a[(safe+1)%3]=item(stage>1?'laser':'wall',3);a[(safe+2)%3]=item('cube',3);}
+   if(pattern===6){a[(safe+1)%3]=robot(s,'guard');a[(safe+2)%3]=robot(s,stage>2?'turret':'scout');}
+   if(pattern===7){a[(safe+1)%3]=item('boost',1);a[(safe+2)%3]=item('energy',5);}
+   if(pattern!==0)a[safe]=s.stack<7?item('cube',4):item(random(s)<.64?'energy':random(s)<.5?'cube':'shield',4);
+   s.rows.push({z:s.next,pattern,lanes:a});s.next+=Math.max(13,18-Math.min(8,stage)*.5)+random(s)*2;
+  }
+ }
+ function gain(s,amount,out){const old=s.gun;s.energy=Math.min(1e8,s.energy+amount);if(s.mode==='campaign')return;while(s.gun<WEAPONS.length-1&&s.energy>=WEAPONS[s.gun+1].need)s.gun++;if(old!==s.gun)out.push({type:'evolve',gun:s.gun});}
+ function damage(s,amount,out,reason){
+  if(s.invincible>0)return;
+  if(s.shield){s.shield=0;s.invincible=.5;out.push({type:'blocked'});return;}
+  if(s.assist)amount=Math.max(1,Math.ceil(amount*.65));s.hits++;s.stack=Math.max(0,s.stack-amount);s.combo=0;s.invincible=.6;out.push({type:'hit',amount});
+  if(s.stack===0){s.ended=true;s.reason=reason||'Your stack ran out. Try a different route or upgrade.';out.push({type:'end'});}
+ }
+ function collect(s,o,out){
+  if(!o)return;
+  if(o.kind==='cube'){const old=s.stack;s.stack=Math.min(stats(s).maxStack,s.stack+o.amount);s.collected+=o.amount;s.charge=Math.min(100,s.charge+6);s.score+=o.amount*10;out.push({type:'cube',amount:s.stack-old});}
+  else if(o.kind==='energy'){gain(s,o.amount,out);s.score+=30;s.charge=Math.min(100,s.charge+9);out.push({type:'energy',amount:o.amount});}
+  else if(o.kind==='gem'){s.gems++;s.score+=75;out.push({type:'gem',amount:75});}
+  else if(o.kind==='shield'){s.shield=1;s.score+=25;out.push({type:'shield'});}
+  else if(o.kind==='boost'){s.overdrive=6;s.charge=Math.min(100,s.charge+20);out.push({type:'boost'});}
+  else if(o.kind==='amp'){s.gates++;gain(s,8,out);s.overdrive=6;s.charge=Math.min(100,s.charge+25);s.score+=80;out.push({type:'gate'});}
+  else if(o.kind==='speed'){s.speedBoost=3;s.charge=Math.min(100,s.charge+25);s.score+=50;out.push({type:'speed'});}
+  else if(o.kind==='laser'){if(laserOn(s))damage(s,3,out,'The pulse gate was active. Watch its on/off rhythm.');}
+  else damage(s,o.kind==='gap'?3:o.amount,out,o.kind==='enemy'?'That robot was still active. Aim earlier or change lanes.':o.kind==='gap'?'The gap used your last blocks.':'The barrier used your last blocks.');
+ }
+ function laserOn(s){return s.time%2.6<1.25;}
+ function enemyClosed(o){return o.type==='guard'&&o.clock%(2.4-((o.rank||1)-1)*.2)<1.15;}
+ function hitEnemy(s,o,row,lane,amount,out,bypass){
+  if(o.hp<=0)return;
+  const actual=amount*(bypass?1:enemyClosed(o)?(WEAPONS[s.gun].armor?.72:.35):o.type==='tank'?(WEAPONS[s.gun].armor?1:.8):1);o.hp=Math.max(0,o.hp-actual);o.flash=.1;
+  out.push({type:'impact',z:row.z,lane,damage:Math.ceil(actual),closed:enemyClosed(o)});
+  if(o.hp===0){s.kills++;s.combo=Math.min(99,s.combo+1);s.maxCombo=Math.max(s.maxCombo,s.combo);s.charge=Math.min(100,s.charge+12);const points=Math.round((40+s.stage*8)*(1+Math.floor(s.combo/4)*.25));s.score+=points;gain(s,o.type==='tank'?4:2,out);out.push({type:'destroy',z:row.z,lane,amount:points,enemy:o.type});row.lanes[lane+1]=item('energy',o.type==='tank'?3:1);
+   if(o.type==='splitter'&&row.z-s.distance>14){row.lanes[lane+1]=robot(s,'mite');const spare=[0,1,2].find(i=>i!==lane+1&&i!==row.safe&&!row.lanes[i]);if(spare!==undefined)row.lanes[spare]=robot(s,'mite');out.push({type:'split'});}
+  }
+ }
+ function fire(s,out){
+  const w=WEAPONS[s.gun],st=stats(s),base=clamp(Math.round(s.x),-1,1);let did=false;
+  for(const offset of w.lanes){const lane=base+offset;if(lane< -1||lane>1)continue;let count=0;
+   for(const row of s.rows){const z=row.z-s.distance;if(z<0||z>52)continue;const o=row.lanes[lane+1];if(o&&o.kind==='enemy'&&o.hp>0){
+    s.beams.push({lane:base,target:lane,z:row.z,life:.11,tier:s.gun});hitEnemy(s,o,row,lane,st.damage*(offset===0?1:.6),out);did=true;
+    if(w.splash)for(let j=0;j<3;j++){const other=row.lanes[j];if(j!==lane+1&&other?.kind==='enemy')hitEnemy(s,other,row,j-1,st.damage*.6,out);}
+    if(w.chain){let linked=false;for(const rr of s.rows){if(linked)break;if(Math.abs(rr.z-row.z)>24)continue;for(let j=0;j<3;j++){const other=rr.lanes[j];if(other?.kind==='enemy'&&other!==o){hitEnemy(s,other,rr,j-1,st.damage*.75,out);s.beams.push({lane:base,target:j-1,z:rr.z,life:.11,tier:s.gun});linked=true;break;}}}}
+    if(++count>=w.pierce)break;
+   }}
+   if(s.phase==='boss'&&s.boss&&Math.abs(lane-s.boss.lane)<.45){const b=s.boss;b.hp=Math.max(0,b.hp-st.damage*(offset===0?1:.6));b.flash=.12;s.beams.push({lane:base,target:b.lane,z:s.distance+36,life:.11,tier:s.gun});out.push({type:'impact',z:s.distance+36,lane:b.lane,damage:Math.ceil(st.damage)});did=true;}
+  }
+  if(did)out.push({type:'shot',gun:s.gun});
+  s.fire=st.interval;
+ }
+ function pulse(s){
+  if(s.ended||s.phase==='upgrade'||s.charge<100)return [];
+  const out=[{type:'pulse'}];s.charge=0;s.pulses++;
+  for(const row of s.rows)if(row.z>s.distance&&row.z-s.distance<90)for(let i=0;i<3;i++){const o=row.lanes[i];if(o&&o.kind==='enemy')hitEnemy(s,o,row,i-1,stats(s).damage*5,out,true);}
+  if(s.boss){s.boss.hp=Math.max(0,s.boss.hp-stats(s).damage*6);s.boss.flash=.2;}
+  // Pulse clears cannot refill their own charge; the next pulse must be earned.
+  s.orbs=[];for(const row of s.rows)for(const o of row.lanes)if(o?.kind==='enemy'&&o.warn>0){o.warn=0;o.shot=true;}s.charge=0;finishBoss(s,out);missions(s,out);s.score=Math.min(1e9,Math.round(s.score));return out;
+ }
+ function startBoss(s,out){
+  s.phase='boss';s.rows=[];s.orbs=[];const def=s.mode==='campaign'?Content.LEVELS[s.level-1]:null,hp=Math.round(def?(def.mini?125:240)*combatScale(s)*(1+def.world*.12):230*enemyScale(s.stage));
+  s.boss={name:['Cloud Warden','Circuit Colossus','Prism Sentinel'][(s.stage-1)%3],style:(s.stage-1)%3,hp,maxHp:hp,lane:0,time:0,attack:1.2,warn:0,lanes:[],cycle:0,flash:0};
+  if(def){s.boss.name=def.mini?Content.WORLDS[def.world].boss+' · Scout':Content.WORLDS[def.world].boss;s.boss.style=def.world;s.boss.phase=1;}else s.boss.phase=1;
+  out.push({type:'boss',name:s.boss.name});
+ }
+ function finishBoss(s,out){
+  if(s.phase==='boss'&&s.boss&&s.boss.hp<=0){s.bosses++;s.score+=400+s.stage*100;gain(s,12,out);s.stack=Math.min(stats(s).maxStack,s.stack+4);s.charge=Math.min(100,s.charge+30);s.boss=null;s.orbs=[];if(s.mode==='campaign')finishLevel(s,out);else{s.phase='upgrade';out.push({type:'victory',stage:s.stage});}}
+ }
+ function chooseUpgrade(s,id){
+  if(s.phase!=='upgrade'||!UPGRADES.some(x=>x.id===id)||s.ended||(id==='rapid'&&s.upgrades.rapid>=13))return false;
+  s.upgrades[id]=Math.min(1000,s.upgrades[id]+1);
+  if(id==='rebuild'){s.stack=Math.min(stats(s).maxStack,s.stack+8);s.shield=1;}
+  s.stage=Math.min(1000,s.stage+1);s.phase='run';s.next=s.distance+20;s.nextBoss=s.distance+260;s.rows=[];s.beams=[];s.orbs=[];s.fire=0;
+  s.rows.push({z:s.distance+10,pattern:0,lanes:[item('cube',3),item('energy',5),item('cube',3)]});fill(s);return true;
+ }
+ function missions(s,out){
+  if(s.mode==='campaign')return;
+  const defs=[{test:s.kills>=8,name:'Robot wrangler'},{test:s.gun>=2,name:'Triple threat'},{test:s.bosses>=1,name:'Guardian cleared'}];
+  defs.forEach((m,i)=>{if(m.test&&!(s.missions&(1<<i))){s.missions|=1<<i;s.score+=150;out.push({type:'mission',name:m.name,amount:150});}});
+ }
+ function canWarn(s,lane){
+  const busy=new Set(s.orbs.map(o=>o.lane));
+  for(const row of s.rows)for(let i=0;i<3;i++){const o=row.lanes[i];if(o&&o.kind==='enemy'&&o.warn>0)busy.add(o.aim===undefined?i-1:o.aim);}
+  return busy.has(lane)||busy.size<2;
+ }
+ function step(s,dt){
+  if(s.ended||s.phase==='upgrade')return [];
+  dt=clamp(dt,0,.05);const out=[],old=s.distance;s.time+=dt;s.invincible=Math.max(0,s.invincible-dt);s.overdrive=Math.max(0,s.overdrive-dt);s.speedBoost=Math.max(0,s.speedBoost-dt);s.charge=Math.min(100,s.charge+dt*(s.mode==='campaign'?3:2));s.fire-=dt;
+  s.x+=(s.target-s.x)*(1-Math.exp(-20*dt));
+  for(let i=s.beams.length-1;i>=0;i--){s.beams[i].life-=dt;if(s.beams[i].life<=0)s.beams.splice(i,1);}
+  if(s.phase==='run'){
+   const speed=s.mode==='campaign'?Content.LEVELS[s.level-1].speed*(s.assist?.8:1)*(s.speedBoost>0?1.16:1):Math.min(23,13+(s.stage-1)*.65);s.distance+=speed*dt;
+   updateEnemies(s,dt,out);
+  }else if(s.boss){
+   const b=s.boss;b.time+=dt;b.flash=Math.max(0,b.flash-dt);b.lane=[[0,-1,1,0,1,-1],[-1,0,1,1,0,-1],[0,1,0,-1,0,1]][(b.style||0)%3][Math.floor(b.time/3.5)%6];
+   if(s.mode==='campaign'&&b.phase===1&&b.hp<=b.maxHp*.5){b.phase=2;out.push({type:'bossPhase'});}
+   if(b.warn>0){b.warn-=dt;if(b.warn<=0){for(const lane of b.lanes)if(s.orbs.length<24)s.orbs.push({lane,z:s.distance+38,damage:2+Math.min(3,Math.floor(s.stage/3))});b.warn=0;b.lanes=[];b.attack=Math.max(.85,1.7-s.stage*.03-(b.phase===2?.15:0));}}
+   else {b.attack=Math.max(0,b.attack-dt);if(b.attack===0&&s.orbs.length===0){b.cycle++;const aim=clamp(Math.round(s.x),-1,1);b.lanes=s.mode==='campaign'?bossLanes(b,aim):b.style===1&&b.cycle%3!==0?[-1,0,1].filter(l=>l!==b.lane):b.style===2?[(b.cycle%3)-1]:[aim];b.warn=s.assist?1.4:1.05;out.push({type:'warning'});}}
+  }
+  if(s.fire<=0)fire(s,out);
+  for(let i=s.orbs.length-1;i>=0;i--){const o=s.orbs[i];o.z-=dt*26;if(o.z<=s.distance){if(Math.abs(s.x-o.lane)<.45)damage(s,o.damage,out,'A robot pulse reached your lane. Watch the warning stripe.');s.orbs.splice(i,1);}}
+  if(!s.ended&&s.phase==='run'){
+   for(const row of s.rows)if(row.z>old&&row.z<=s.distance){collect(s,row.lanes[clamp(Math.round(s.x)+1,0,2)],out);if(!s.ended)s.score+=5;else break;}
+   s.rows=s.rows.filter(r=>r.z>s.distance-6);
+   if(!s.ended&&s.distance>=s.nextBoss){if(s.mode==='campaign'&&!Content.LEVELS[s.level-1].boss)finishLevel(s,out);else startBoss(s,out);}else fill(s);
+  }
+  if(!s.ended)finishBoss(s,out);missions(s,out);s.score=Math.min(1e9,Math.round(s.score));if(s.beams.length>32)s.beams.splice(0,s.beams.length-32);
+  return out;
+ }
+ const PATTERNS=['harvest','duel','fork','bulwark','shield','gap','crossfire','laser','slalom','swarm','drone','amp','shutter','snipe','medic','split','treasure','rush'];
+ const MODULES=[{id:'power',name:'Power Coil',icon:'✦',cap:50,text:'+4% base blaster damage per point.'},{id:'rapid',name:'Rapid Relay',icon:'»',cap:30,text:'+2.5% base firing rate per point.'},{id:'rebuild',name:'Rebuild Kit',icon:'▣',cap:20,text:'More starting blocks and stack capacity as this grows.'}];
+ const newCampaignSave=()=>({unlocked:1,stars:Array(100).fill(0),best:Array(100).fill(0),modules:{power:0,rapid:0,rebuild:0},tokens:0,hero:0,paint:0,weapon:0,assist:false});
+ const clearedCount=c=>c.stars.filter(n=>n>0).length;
+ function newCampaign(id,campaign){
+  const def=Content.LEVELS[id-1];if(!def||id>campaign.unlocked)throw Error('Level is locked');
+  const s=newRun(def.seed);s.mode='campaign';s.level=id;s.stage=def.world+1;s.reactorRank=campaign.unlocked;s.hero=campaign.hero;s.paint=campaign.paint;s.assist=campaign.assist;s.gun=campaign.weapon;
+  s.upgrades={...campaign.modules};s.stack=Math.min(stats(s).maxStack,8+Math.floor(s.upgrades.rebuild*.3));s.charge=35;s.rows=[];s.next=15;s.nextBoss=def.length;s.beat=0;fillCampaign(s);return s;
+ }
+ function fillCampaign(s){
+  if(s.phase!=='run')return;const def=Content.LEVELS[s.level-1];
+  while(s.next<s.distance+VIEW+18&&s.next<def.length-18){
+   const n=s.beat++,pattern=def.beats[n%def.beats.length],safe=(Math.floor(random(s)*3)+n)%3,a=[null,null,null],b=(safe+1)%3,c=(safe+2)%3;
+   const enemy=type=>robot(s,type),cube=()=>item('cube',3+(n%2)),cell=()=>item('energy',def.modifier==='charged'?6:4);
+   if(pattern==='harvest'){a[safe]=cube();a[b]=cell();a[c]=item('gem',1);}
+   if(pattern==='duel'){a[b]=enemy('scout');a[c]=cell();}
+   if(pattern==='fork'){a[b]=enemy('scout');a[c]=enemy(def.world>2?'drone':'scout');}
+   if(pattern==='bulwark'){a[b]=enemy('tank');a[c]=item('wall',4);}
+   if(pattern==='shield'){a[b]=enemy('guard');a[c]=def.world>0?enemy('scout'):cell();}
+   if(pattern==='gap'){a[b]=item('gap');a[c]=enemy('scout');}
+   if(pattern==='crossfire'){a[b]=enemy('turret');a[c]=enemy(def.world>4?'drone':'scout');}
+   if(pattern==='laser'){a[b]=item('laser',3);a[c]=def.world>2?enemy('guard'):enemy('scout');}
+   if(pattern==='slalom'){a[b]=item('wall',3);a[c]=item('gem',1);}
+   if(pattern==='swarm'){a[b]=enemy('mite');a[c]=enemy('mite');}
+   if(pattern==='drone')a[b]=enemy('drone');
+   if(pattern==='amp'){a[b]=item('amp',8);a[c]=enemy('tank');}
+   if(pattern==='shutter')a[b]={...item('wall',3),moving:true,clock:0,moved:false,moveWarn:0,moveTo:-1};
+   if(pattern==='snipe'){a[b]=enemy('sniper');a[c]=item('gap');}
+   if(pattern==='medic'){a[b]=enemy('medic');a[c]=enemy(def.world>8?'splitter':'guard');}
+   if(pattern==='split')a[b]=enemy('splitter');
+   if(pattern==='treasure'){a[safe]=item('gem',1);a[b]=item('shield',1);a[c]=cell();}
+   if(pattern==='rush'){a[b]=item('speed',1);a[c]=enemy('scout');}
+   if(!a[safe])a[safe]=n%3===0?cube():n%5===0?item('gem',1):cell();
+   if(n===0&&s.level===1)a[safe]=item('cube',3);
+   s.rows.push({z:s.next,pattern:PATTERNS.indexOf(pattern),safe,lanes:a});
+   // At the fastest speed, even a boost leaves over one second per ordinary row.
+   s.next+=22+(def.modifier==='gentle'?3:0)+(n%3)*1.5+(pattern==='rush'?4:0);
+  }
+ }
+ function updateEnemies(s,dt,out){
+  for(const row of s.rows)for(let i=0;i<3;i++){
+   const o=row.lanes[i];if(!o||(o.kind!=='enemy'&&!o.moving))continue;
+   const z=row.z-s.distance;o.clock+=dt;
+   if(o.kind==='enemy'){o.flash=Math.max(0,o.flash-dt);o.healing=Math.max(0,(o.healing||0)-dt);}
+   if((o.type==='drone'||o.moving)&&!o.moved&&z>24){
+    if(o.moveWarn>0){o.moveWarn=Math.max(0,o.moveWarn-dt);if(o.moveWarn===0&&o.moveTo>=0&&!row.lanes[o.moveTo]){row.lanes[o.moveTo]=o;row.lanes[i]=null;o.moved=true;}}
+    else if(o.clock>1.1){const dest=[0,1,2].find(j=>j!==i&&j!==row.safe&&!row.lanes[j]);if(dest!==undefined){o.moveTo=dest;o.moveWarn=1;}}
+   }
+   if(o.kind!=='enemy')continue;
+   if(o.type==='medic'&&z>5){o.heal-=dt;if(o.heal<=0){o.heal=1.9-(o.rank-1)*.2;o.healing=.35;for(const rr of s.rows)if(Math.abs(rr.z-row.z)<30)for(const other of rr.lanes)if(other?.kind==='enemy'&&other!==o)other.hp=Math.min(other.maxHp,other.hp+other.maxHp*.08);}}
+   if((o.type==='turret'||o.type==='sniper')&&!o.shot){
+    if(o.warn>0){o.warn-=dt;if(o.warn<=0){o.warn=0;o.shot=true;if(s.orbs.length<24)s.orbs.push({lane:o.aim,z:Math.max(s.distance+18,row.z),damage:o.type==='sniper'?3:2});}}
+    else if(z<65&&z>28){const aim=o.type==='sniper'?clamp(Math.round(s.x),-1,1):i-1;if(canWarn(s,aim)){o.aim=aim;o.warn=(o.type==='sniper'?1.2:.95)+(s.assist?.25:0);out.push({type:'warning'});}}
+   }
+  }
+ }
+ function bossLanes(b,aim){
+  const sweep=(b.cycle%3)-1,opposite=aim===0?(b.cycle%2?1:-1):-aim;
+  const patterns=[[[aim],[sweep]],[[ -1,1],[aim]],[[sweep],[(sweep+2)%3-1]],[[ -1,0],[0,1]],[[aim],[ -1,1]],[[aim],[opposite]],[[sweep],[-1,0,1].filter(l=>l!==b.lane)],[[opposite],[sweep]],[[aim],[-1,0,1].filter(l=>l!==b.lane)],[[sweep],[aim,opposite]]];
+  const pair=patterns[b.style%10],which=(b.cycle+(b.phase||1)-1)%2;
+  return [...new Set(pair[which])].slice(0,2);
+ }
+ function objectiveValue(s,key){return key==='clean'?s.hits:key==='pulse'?s.pulses:key==='combo'?s.maxCombo:s[key]||0;}
+ function levelStars(s){if(!s.won)return 0;const d=Content.LEVELS[s.level-1],v=objectiveValue(s,d.objective);return 1+Number(d.objective==='clean'?v<=d.target:v>=d.target)+Number(s.stack>=d.starHealth);}
+ function finishLevel(s,out){if(s.ended)return;s.won=true;s.ended=true;s.phase='complete';s.reason='Level '+s.level+' complete';s.score+=500+s.level*20;out.push({type:'complete',stars:levelStars(s)});}
+ function awardLevel(data,s){
+  if(s.mode!=='campaign'||!s.won)return {first:false,stars:0};
+  const c=data.campaign,i=s.level-1,first=c.stars[i]===0,stars=levelStars(s);
+  c.stars[i]=Math.max(c.stars[i],stars);c.best[i]=Math.max(c.best[i],Math.round(s.score));c.unlocked=Math.max(c.unlocked,Math.min(100,s.level+1));if(first)c.tokens++;
+  return {first,stars};
+ }
+ function chooseModule(c,id){const m=MODULES.find(x=>x.id===id);if(!m||c.tokens<1||c.modules[id]>=m.cap)return false;c.tokens--;c.modules[id]++;return true;}
+ function validateRun(r){
+  if(!r||![2,3].includes(r.version))return null;
+  if(r.version===2){Object.assign(r,{version:3,mode:'endless',level:0,hero:0,paint:0,reactorRank:1,assist:false,won:false,hits:0,maxCombo:r.combo||0,pulses:0,gates:0,speedBoost:0,beat:0});for(const row of r.rows||[])for(let i=0;i<3;i++){const o=row.lanes[i];if(o?.kind==='enemy')Object.assign(o,{rank:1,aim:i-1,moveWarn:0,moveTo:-1,moved:false,heal:1.8,healing:0});}if(r.boss)r.boss.phase=1;}
+  const bounds={distance:[0,1e8],next:[0,1e8+200],rng:[1,4294967295],target:[-1,1],x:[-1,1],stack:[0,30],gems:[0,1e9],score:[0,1e9],stage:[1,1000],combo:[0,99],shield:[0,1],collected:[0,1e9],time:[0,1e9],energy:[0,1e8],gun:[0,7],kills:[0,1e9],bosses:[0,1e9],nextBoss:[0,1e8+400],fire:[-.1,2],charge:[0,100],overdrive:[0,6],invincible:[0,1],lastPattern:[-1,17],missions:[0,7],level:[0,100],hero:[0,5],paint:[0,11],reactorRank:[1,100],hits:[0,1e8],maxCombo:[0,99],pulses:[0,1e8],gates:[0,1e8],speedBoost:[0,3],beat:[0,1000000]};
+  for(const [key,[a,b]]of Object.entries(bounds))if(!finite(r[key],a,b))return null;
+  for(const key of ['rng','target','stack','gems','score','stage','combo','shield','gun','kills','bosses','lastPattern','missions'])if(!Number.isInteger(r[key]))return null;
+  if(!['endless','campaign'].includes(r.mode)||!['level','hero','paint','reactorRank'].every(k=>Number.isInteger(r[k]))||(r.mode==='campaign'&&(r.level<1||r.stage!==Content.LEVELS[r.level-1].world+1)))return null;
+  if(!['run','boss','upgrade','complete'].includes(r.phase)||!r.upgrades||!['power','rapid','rebuild'].every(k=>Number.isInteger(r.upgrades[k])&&finite(r.upgrades[k],0,1000)))return null;
+  if(!Array.isArray(r.rows)||r.rows.length>24||!Array.isArray(r.orbs)||r.orbs.length>24||!Array.isArray(r.beams)||r.beams.length>32)return null;
+  let previous=-Infinity;
+  for(const row of r.rows){if(!finite(row.z,r.distance-20,r.distance+180)||row.z<=previous||!Array.isArray(row.lanes)||row.lanes.length!==3)return null;previous=row.z;
+   if(row.safe!==undefined&&(!Number.isInteger(row.safe)||!finite(row.safe,0,2)))return null;
+   for(const o of row.lanes){if(!o)continue;if(!['enemy','cube','energy','gem','shield','boost','wall','gap','laser','amp','speed'].includes(o.kind)||!Number.isInteger(o.amount)||!finite(o.amount,0,12))return null;if(o.kind==='enemy'&&(!ENEMIES[o.type]||!finite(o.hp,0,1e6)||!finite(o.maxHp,1,1e6)||o.hp>o.maxHp||!finite(o.clock,0,1e9)||!finite(o.warn,0,1.5)||!finite(o.flash,0,.2)||!Number.isInteger(o.rank)||!finite(o.rank,1,4)||!Number.isInteger(o.aim)||!finite(o.aim,-1,1)||!finite(o.heal,0,2)||!finite(o.healing,0,.4)))return null;
+    if((o.kind==='enemy'||o.moving)&&(!finite(o.moveWarn,0,1.1)||!Number.isInteger(o.moveTo)||!finite(o.moveTo,-1,2)||!finite(o.clock,0,1e9)))return null;
+   }
+  }
+  for(const o of r.orbs)if(![-1,0,1].includes(o.lane)||!finite(o.z,r.distance-3,r.distance+180)||!finite(o.damage,0,12))return null;
+  for(const b of r.beams)if(![-1,0,1].includes(b.lane)||!finite(b.target,-1,1)||!finite(b.z,r.distance-20,r.distance+180)||!finite(b.life,0,.12)||!Number.isInteger(b.tier)||!finite(b.tier,0,7))return null;
+  if(r.phase==='boss'){const b=r.boss;if(!b||!finite(b.hp,0,1e7)||!finite(b.maxHp,1,1e7)||b.hp>b.maxHp||!finite(b.lane,-1,1)||!finite(b.time,0,1e9)||!finite(b.attack,-.1,5)||!finite(b.warn,0,1.5)||!Array.isArray(b.lanes)||b.lanes.length>2||!b.lanes.every(l=>[-1,0,1].includes(l))||!Number.isInteger(b.cycle)||!finite(b.cycle,0,1e9)||!finite(b.flash,0,.3)||![1,2].includes(b.phase))return null;b.name=typeof b.name==='string'?b.name.slice(0,48):'Guardian';if(!Number.isInteger(b.style)||!finite(b.style,0,9))b.style=(r.stage-1)%3;}
+  else r.boss=null;
+  r.ended=!!r.ended;r.won=!!r.won;r.assist=!!r.assist;r.reason=typeof r.reason==='string'?r.reason.slice(0,120):'';return r;
+ }
+ function migrateRun(old){
+  if(!old||old.version!==1||!finite(old.distance,0,1e8)||!finite(old.score,0,1e9)||!finite(old.stack,0,18)||old.ended)return null;
+  const r=newRun(old.rng);r.distance=old.distance;r.score=Math.floor(old.score);r.stack=Math.max(6,Math.floor(old.stack));r.gems=Math.floor(old.gems||0);r.target=clamp(Math.round(old.target||0),-1,1);r.x=r.target;r.next=r.distance+18;r.nextBoss=r.distance+160;r.rows=[];fill(r);return validateRun(r);
+ }
+  const defaultSave=()=>({version:3,best:0,runs:0,totalGems:0,theme:0,highestGun:0,totalBosses:0,settings:{sfx:true,music:true,motion:true},campaign:newCampaignSave(),active:null,pendingScore:0});
+ function parseSave(raw){
+   if(!raw)return defaultSave();const v=JSON.parse(raw);if(!v||![1,2,3].includes(v.version))throw Error('Unsupported save version');const d=defaultSave();
+  for(const k of ['best','runs','totalGems','totalBosses','pendingScore'])if(Number.isInteger(v[k])&&finite(v[k],0,1e9))d[k]=v[k];
+   if(Number.isInteger(v.highestGun)&&finite(v.highestGun,0,7))d.highestGun=v.highestGun;
+  if(Number.isInteger(v.theme)&&THEMES[v.theme]&&d.best>=THEMES[v.theme].need)d.theme=v.theme;
+  if(v.settings){d.settings.sfx=v.settings.sfx!==false;d.settings.music=v.settings.music!==false;d.settings.motion=v.settings.motion!==false;}
+   if(v.version===3){const c=v.campaign;if(!c||!Array.isArray(c.stars)||c.stars.length!==100||!c.stars.every(n=>Number.isInteger(n)&&finite(n,0,3))||!Array.isArray(c.best)||c.best.length!==100||!c.best.every(n=>Number.isInteger(n)&&finite(n,0,1e9))||!c.modules||!MODULES.every(m=>Number.isInteger(c.modules[m.id])&&finite(c.modules[m.id],0,m.cap))||!Number.isInteger(c.tokens)||!finite(c.tokens,0,100))throw Error('Invalid campaign save');
+    let unlocked=1;while(unlocked<100&&c.stars[unlocked-1]>0)unlocked++;
+    if(c.tokens+Object.values(c.modules).reduce((a,n)=>a+n,0)>clearedCount(c))throw Error('Invalid upgrade balance');
+    const count=clearedCount(c);d.campaign={unlocked,stars:c.stars.slice(),best:c.best.slice(),modules:{power:c.modules.power,rapid:c.modules.rapid,rebuild:c.modules.rebuild},tokens:c.tokens,assist:!!c.assist,hero:Number.isInteger(c.hero)&&Content.HEROES[c.hero]?.need<=count?c.hero:0,paint:Number.isInteger(c.paint)&&Content.PAINTS[c.paint]?.need<=count?c.paint:0,weapon:Number.isInteger(c.weapon)&&Content.GUN_UNLOCKS[c.weapon]<=count?c.weapon:0};
+   }
+   d.active=v.version===1?migrateRun(v.active):validateRun(v.active);if(d.active?.mode==='campaign'&&d.active.level>d.campaign.unlocked)d.active=null;return d;
+ }
+ return {VERSION,VIEW,THEMES,WEAPONS,ENEMIES,BIOMES,UPGRADES,clamp,newRun,step,pulse,chooseUpgrade,stats,enemyScale,combatScale,enemyClosed,laserOn,validateRun,parseSave,defaultSave,...Content,PATTERNS,MODULES,newCampaign,awardLevel,levelStars,objectiveValue,chooseModule,clearedCount};
+});
+
+</script>
+<script>
+(function (root) {
+  'use strict';
+  const C=root.StackCore;
+  class StackRenderer {
+    constructor(canvas) {
+      this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:false});
+      this.w=0;this.h=0;this.fx=[];this.flash=0;this.bump=0;
+      this.resize();
+    }
+    resize() {
+      this.w=Math.max(1,innerWidth);this.h=Math.max(1,innerHeight);
+      const dpr=Math.min(devicePixelRatio||1,2);
+      this.canvas.width=Math.round(this.w*dpr);this.canvas.height=Math.round(this.h*dpr);
+      this.ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    poly(points,fill) {
+      const g=this.ctx;g.fillStyle=fill;g.beginPath();
+      points.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1]));g.closePath();g.fill();
+    }
+    ellipse(x,y,rx,ry,fill) {const g=this.ctx;g.fillStyle=fill;g.beginPath();g.ellipse(x,y,rx,ry,0,0,Math.PI*2);g.fill();}
+    round(x,y,w,h,r,fill) {const g=this.ctx;g.fillStyle=fill;g.beginPath();g.roundRect(x,y,w,h,r);g.fill();}
+    project(z,lane) {
+      const s=19/(19+Math.max(-8,z));
+      return {x:this.cx+(lane||0)*this.half*.66*s,y:this.horizon+(this.base-this.horizon)*s,s};
+    }
+    block(x,y,w,h,front,top,side) {
+      const d=w*.27;
+      this.poly([[x-w/2,y-h],[x+w/2,y-h],[x+w/2,y],[x-w/2,y]],front);
+      this.poly([[x-w/2,y-h],[x-w/2+d,y-h-d],[x+w/2+d,y-h-d],[x+w/2,y-h]],top);
+      this.poly([[x+w/2,y],[x+w/2+d,y-d],[x+w/2+d,y-h-d],[x+w/2,y-h]],side);
+      this.ctx.fillStyle='#ffffff35';this.ctx.fillRect(x-w/2+2,y-h+2,w-4,1.5);
+    }
+    label(text,x,y,size,color) {
+      const g=this.ctx;g.font='900 '+size+'px Arial, sans-serif';g.textAlign='center';g.textBaseline='middle';
+      g.lineWidth=4;g.strokeStyle='#ffffffec';g.strokeText(text,x,y);g.fillStyle=color;g.fillText(text,x,y);
+    }
+    burst(text,color,kind,motion) {
+      const p=this.project(0,this.playerX||0);this.bump=kind==='hit'?-1:1;
+      if(kind==='hit')this.flash=.15;
+      this.fx.push({x:p.x,y:p.y-80,text,color,life:1.15,max:1.15,vx:0,vy:-35});
+      if(motion)for(let i=0;i<12;i++)this.fx.push({x:p.x,y:p.y-45,text:'',color,life:.5+Math.random()*.4,max:.9,vx:(Math.random()-.5)*180,vy:-65-Math.random()*90});
+      if(this.fx.length>80)this.fx.splice(0,this.fx.length-80);
+    }
+    impact(event,s,motion) {
+      const p=this.project(event.z-s.distance,event.lane);
+      if(event.type==='destroy'){
+        this.fx.push({x:p.x,y:p.y-30*p.s,text:'+'+event.amount,color:'#7360b6',life:.8,max:.8,vx:0,vy:-24});
+        if(motion)for(let i=0;i<8;i++)this.fx.push({x:p.x,y:p.y-18*p.s,text:'',color:C.ENEMIES[event.enemy].color,life:.55,max:.55,vx:(Math.random()-.5)*110,vy:-50-Math.random()*50});
+      }else if(motion&&this.fx.length<60){this.fx.push({x:p.x,y:p.y-25*p.s,text:'',color:event.closed?'#9abbdd':'#fff1a0',life:.18,max:.18,vx:0,vy:-10});}
+      if(this.fx.length>100)this.fx.splice(0,this.fx.length-100);
+    }
+    robot(o,p,size,time) {
+      const g=this.ctx,c=C.ENEMIES[o.type],w=size*(o.type==='tank'?1.25:o.type==='mite'?.62:.92),y=p.y;
+      this.ellipse(p.x,y+2*p.s,w*.65,w*.16,'#65577a24');
+      this.block(p.x,y-w*.1,w,w*.65,o.flash>0?'#fff5d5':c.color,'#eae0ff','#8274af');
+      this.round(p.x-w*.41,y-w*.59,w*.82,w*.26,4*p.s,'#423f68');
+      this.round(p.x-w*.27,y-w*.53,w*.13,w*.1,1,'#8df4e8');this.round(p.x+w*.14,y-w*.53,w*.13,w*.1,1,'#8df4e8');
+      if(o.type==='tank'){this.block(p.x-w*.58,y-w*.04,w*.25,w*.4,'#ce945b','#f3d99b','#b38267');this.block(p.x+w*.59,y-w*.04,w*.25,w*.4,'#ce945b','#f3d99b','#b38267');}
+      if(o.type==='turret'){this.round(p.x-w*.12,y-w*1.05,w*.24,w*.6,3*p.s,'#756281');this.ellipse(p.x,y-w*1.04,w*.17,w*.08,o.warn>0?'#ffbb84':'#ede3f6');}
+      if(o.type==='drone'){for(const side of [-1,1])this.poly([[p.x+side*w*.4,y-w*.3],[p.x+side*w*.93,y-w*.7],[p.x+side*w*.83,y-w*.05]],'#65a6a8');this.ellipse(p.x,y-w*.82,w*.5,w*.08,'#567a91');}
+      if(o.type==='sniper'){this.round(p.x-w*.12,y-w*1.05,w*.24,w*.58,2*p.s,'#7c567d');this.ellipse(p.x,y-w*.98,w*.24,w*.21,o.warn>0?'#ffcb80':'#f9d6e5');this.ellipse(p.x,y-w*.98,w*.12,w*.11,'#674366');}
+      if(o.type==='medic'){this.round(p.x-w*.08,y-w*.87,w*.16,w*.5,1,'#efffea');this.round(p.x-w*.25,y-w*.7,w*.5,w*.16,1,'#efffea');if(o.healing>0){g.strokeStyle='#72b49b';g.lineWidth=2*p.s;g.beginPath();g.ellipse(p.x,y-w*.25,w*(1.5-o.healing),w*.4,0,0,Math.PI*2);g.stroke();}}
+      if(o.type==='splitter'){for(const side of [-1,1])this.poly([[p.x+side*w*.2,y-w*.75],[p.x+side*w*.5,y-w*1.03],[p.x+side*w*.6,y-w*.7]],'#ad89c9');g.strokeStyle='#eee7ff';g.lineWidth=2*p.s;g.beginPath();g.moveTo(p.x,y-w*.62);g.lineTo(p.x+w*.08,y-w*.38);g.lineTo(p.x-w*.08,y-w*.25);g.lineTo(p.x,y);g.stroke();}
+      for(let j=0;j<(o.rank||1);j++)this.ellipse(p.x+((j-(o.rank-1)/2)*w*.2),y-w*.16,w*.055,w*.055,'#fff1b6');
+      if(C.enemyClosed(o)){g.strokeStyle='#65bcfa';g.lineWidth=Math.max(1,3*p.s);g.beginPath();g.ellipse(p.x+w*.07,y-w*.38,w*.8,w*.71,0,0,Math.PI*2);g.stroke();}
+      if(p.s>.24){const bw=w*1.4,by=y-w*(['turret','sniper','splitter'].includes(o.type)?1.3:1.08);this.round(p.x-bw/2,by,bw,5*p.s,2,'#ddd5ea');this.round(p.x-bw/2,by,bw*Math.max(0,o.hp/o.maxHp),5*p.s,2,c.color);if(p.s>.36)this.label(Math.ceil(o.hp)+' HP',p.x,by-11*p.s,Math.max(9,14*p.s),'#635673');}
+    }
+    scenery(prop,x,y,s,t,time,motion){
+      const g=this.ctx;this.block(x,y,s,s*.25,t.edge,t.haze,t.side);
+      if(prop==='garden'||prop==='fortress'){
+        this.round(x-s*.08,y-s*.65,s*.16,s*.52,2,t.accent);
+        if(prop==='garden'){this.ellipse(x,y-s*.77,s*.35,s*.31,t.color);this.ellipse(x+s*.13,y-s*.92,s*.2,s*.18,t.haze);}
+        else{this.block(x,y-s*.2,s*.6,s*.9,t.side,t.haze,t.accent);for(let j=-1;j<=1;j++)this.block(x+j*s*.23,y-s*1.1,s*.15,s*.22,t.color,t.haze,t.accent);this.round(x-s*.12,y-s*.7,s*.24,s*.5,s*.1,t.accent);}
+      }else if(prop==='factory'){
+        this.block(x-s*.12,y-s*.2,s*.6,s*.6,t.color,t.haze,t.side);this.block(x+s*.14,y-s*.65,s*.18,s*.5,t.accent,t.haze,t.side);this.ellipse(x+s*.17,y-s*1.33,s*.23,s*.13,t.haze);
+      }else if(prop==='gears'){
+        const a=motion?time*.3:0;g.save();g.translate(x,y-s*.7);g.rotate(a);for(let j=0;j<8;j++){g.rotate(Math.PI/4);this.round(-s*.08,-s*.56,s*.16,s*.26,2,t.accent);}this.ellipse(0,0,s*.4,s*.4,t.color);this.ellipse(0,0,s*.15,s*.15,t.haze);g.restore();
+      }else if(prop==='crystal'||prop==='prism'){
+        for(const k of [-1,0,1]){const xx=x+k*s*.26,hh=s*(k===0?1.3:.8);this.poly([[xx-s*.15,y-s*.2],[xx-s*.2,y-hh*.65],[xx,y-hh],[xx+s*.23,y-hh*.65],[xx+s*.13,y-s*.2]],t.color);this.poly([[xx,y-hh],[xx+s*.23,y-hh*.65],[xx+s*.13,y-s*.2],[xx,y-s*.2]],t.accent);}
+      }else if(prop==='harbor'){
+        this.round(x-s*.025,y-s*1.5,s*.05,s*1.3,1,t.accent);this.poly([[x+s*.04,y-s*1.5],[x+s*.62,y-s*.42],[x+s*.04,y-s*.45]],t.haze);this.poly([[x-s*.04,y-s*1.2],[x-s*.45,y-s*.5],[x-s*.04,y-s*.48]],t.color);
+      }else if(prop==='moon'){
+        this.ellipse(x,y-s*.9,s*.48,s*.48,t.haze);this.ellipse(x+s*.2,y-s*1.02,s*.37,s*.4,t.sky);this.round(x-s*.025,y-s*.8,s*.05,s*.6,1,t.accent);
+      }else{
+        this.block(x,y-s*.2,s*.3,s*.72,t.side,t.haze,t.accent);g.strokeStyle=t.color;g.lineWidth=Math.max(2,s*.12);g.beginPath();g.ellipse(x,y-s*.9,s*.5,s*.36,prop==='reactor'?.45:0,0,Math.PI*2);g.stroke();this.ellipse(x,y-s*.9,s*.16,s*.16,t.haze);
+      }
+    }
+    avatar(cx,yy,u,hero,paint,gun,time,motion){
+      const g=this.ctx,h=C.HEROES[hero||0],p=C.PAINTS[paint||0],body=p.body,trim=p.trim;
+      g.save();g.translate(cx,yy);g.scale(u,u);
+      this.round(-12,-11,9,14,3,trim);this.round(4,-11,9,14,3,trim);
+      if(h.shape==='courier'){
+        this.round(-15,-36,30,28,8,body);this.round(-12,-59,25,26,10,'#fff0d3');this.round(-15,-63,31,16,8,trim);this.round(-17,-50,35,6,2,body);this.round(-9,-31,18,15,5,p.glow);this.round(-19,-30,7,20,3,trim);
+      }else if(h.shape==='blob'){
+        this.ellipse(0,-29,23,28,body);this.ellipse(-15,-54,4,10,trim);this.ellipse(15,-54,4,10,trim);this.ellipse(-14,-14,9,6,p.glow);
+      }else if(h.shape==='hex'){
+        this.poly([[-25,-42],[-12,-59],[13,-59],[26,-42],[13,-10],[-13,-10]],body);this.poly([[-13,-10],[13,-10],[25,-42],[12,-33]],trim);this.round(-12,-22,24,5,2,p.glow);
+      }else if(h.shape==='kite'){
+        this.poly([[0,-65],[29,-38],[14,-12],[0,-5],[-15,-12],[-29,-38]],body);this.poly([[0,-65],[0,-5],[-15,-12],[-29,-38]],trim);this.poly([[-8,-10],[0,3],[8,-10]],p.glow);
+      }else if(h.shape==='sprout'){
+        this.round(-18,-44,36,35,15,body);this.poly([[-2,-43],[-25,-66],[-29,-43],[-3,-37]],body);this.poly([[2,-44],[24,-70],[30,-45],[2,-36]],p.glow);this.round(-10,-24,20,13,6,trim);
+      }else{
+        this.ellipse(0,-36,24,24,body);g.strokeStyle=trim;g.lineWidth=4;g.beginPath();g.ellipse(0,-36,31,12,-.3,0,Math.PI*2);g.stroke();const a=motion?time:1;this.ellipse(Math.cos(a)*30,-36+Math.sin(a)*12,6,6,p.glow);this.ellipse(-7,-18,8,5,trim);
+      }
+      this.round(-12,-43,25,10,4,trim);this.round(-7,-40,4,3,1,p.glow);this.round(5,-40,4,3,1,p.glow);
+      const wp=C.WEAPONS[gun||0];this.round(16,-39,13,28,4,trim);this.round(17,-44,11,23,3,wp.color);
+      if(gun===1){this.round(29,-47,6,26,2,wp.color);this.round(18,-47,6,8,2,p.glow);}
+      else if(gun===2||gun===4){for(let j=0;j<3;j++)this.round(12+j*9,-49-(j===1?5:0),6,25,2,wp.color);this.round(11,-29,29,6,2,p.glow);}
+      else if(gun===3||gun===7){this.round(19,-61,7,33,2,wp.color);this.poly([[22,-69],[29,-57],[22,-47],[15,-57]],gun===7?p.glow:wp.color);}
+      else if(gun===5){this.round(13,-49,24,24,8,wp.color);this.ellipse(25,-49,12,5,trim);this.ellipse(25,-49,7,3,p.glow);}
+      else if(gun===6){g.strokeStyle=wp.color;g.lineWidth=5;g.beginPath();g.ellipse(23,-48,10,13,0,0,Math.PI*2);g.stroke();this.ellipse(23,-48,4,6,p.glow);}
+      else this.round(19,-52,7,11,2,p.glow);
+      g.restore();
+    }
+    update(dt) {
+      this.flash=Math.max(0,this.flash-dt);this.bump*=Math.exp(-12*dt);
+      for(let i=this.fx.length-1;i>=0;i--) {const f=this.fx[i];f.life-=dt;if(f.life<=0){this.fx.splice(i,1);continue;}f.x+=f.vx*dt;f.y+=f.vy*dt;if(!f.text)f.vy+=240*dt;}
+    }
+    draw(s,themeIndex,time,menu,motion) {
+      const g=this.ctx,w=this.w,h=this.h,world=s.mode==='campaign'?C.WORLDS[C.LEVELS[s.level-1].world]:null,base=C.THEMES[((themeIndex||0)+(menu?0:s.stage-1))%C.THEMES.length],t=world?{...base,...world,edge:world.color}:base,paint=C.PAINTS[s.paint||0];
+      const compact=w<=680&&h>520;
+      this.cx=menu&&!compact?w*.73:w*.5;
+      this.half=menu?Math.min(w*(compact?.4:.255),300):Math.min(w*.455,350);
+      this.horizon=h*(menu&&compact?.66:.19);
+      this.base=h*(menu&&compact?.97:.81);
+      if(h<500){this.horizon=h*.14;this.base=h*.79;}
+      const sky=g.createLinearGradient(0,0,0,h);sky.addColorStop(0,t.sky);sky.addColorStop(1,t.haze);g.fillStyle=sky;g.fillRect(0,0,w,h);
+      // Small, still clouds: a quiet backdrop without texture downloads.
+      g.globalAlpha=.65;
+      for(let i=0;i<6;i++) {
+        const x=((i*.219+.08)%1)*w,y=h*(.12+(i%3)*.105),r=12+(i%3)*7;
+        this.ellipse(x,y,r*2.5,r*.65,'#ffffff');this.ellipse(x-r*.7,y-r*.35,r,r*.75,'#ffffff');this.ellipse(x+r*.5,y-r*.6,r*1.1,r*.9,'#ffffff');
+      }
+      g.globalAlpha=.17;
+      const islandY=this.horizon+40;
+      for(let i=0;i<7;i++) {const x=i*w/6,y=islandY+(i%3)*17;this.poly([[x-100,y+42],[x-40,y-20],[x+14,y+10],[x+43,y-36],[x+120,y+42]],t.side);}
+      g.globalAlpha=1;
+      // Far-to-near floating scenery, all generated geometry.
+      for(let i=9;i>=0;i--) {
+        const z=(i*17+s.distance*.3)%155+10,p=this.project(z,0),side=i%2?1:-1;
+        const x=this.cx+side*this.half*p.s*(1.6+(i%3)*.17),sz=68*p.s;
+        g.globalAlpha=Math.min(.85,.35+p.s);this.scenery(world?.prop||'garden',x,p.y+20*p.s,sz,{...t,color:t.color||t.cube},time,motion);g.globalAlpha=1;
+      }
+      const far=this.project(C.VIEW+20,0),near=this.project(-8,0),wf=this.half*far.s,wn=this.half*near.s;
+      this.poly([[this.cx-wf,far.y],[this.cx+wf,far.y],[this.cx+wn,near.y+24],[this.cx-wn,near.y+24]],t.side);
+      this.poly([[this.cx-wf,far.y],[this.cx+wf,far.y],[this.cx+wn,near.y],[this.cx-wn,near.y]],t.road);
+      for(const side of [-1,1])this.poly([[this.cx+side*wf,far.y],[this.cx+side*wf*.95,far.y],[this.cx+side*wn*.95,near.y],[this.cx+side*wn,near.y]],t.edge);
+      for(let z=-(s.distance%9);z<C.VIEW+10;z+=9) {
+        if(z< -6)continue;
+        const p=this.project(z,0),q=this.project(z+4,0);
+        for(const side of [-1,1])this.poly([[this.cx+side*this.half*p.s/3-1.5*p.s,p.y],[this.cx+side*this.half*p.s/3+1.5*p.s,p.y],[this.cx+side*this.half*q.s/3+1.5*q.s,q.y],[this.cx+side*this.half*q.s/3-1.5*q.s,q.y]],'#ddd8e57a');
+      }
+      // Every ranged attack announces its lane before a visible pulse travels.
+      const warnings=s.boss&&s.boss.warn>0?[...s.boss.lanes]:[];
+      for(const row of s.rows)for(let i=0;i<3;i++){const o=row.lanes[i];if(o&&o.kind==='enemy'&&o.warn>0)warnings.push(o.aim===undefined?i-1:o.aim);}
+      for(const lane of new Set(warnings)){
+        const a=this.project(0,lane),b=this.project(90,lane),ha=this.half*.3*a.s,hb=this.half*.3*b.s;
+        this.poly([[a.x-ha,a.y],[a.x+ha,a.y],[b.x+hb,b.y],[b.x-hb,b.y]],'#f28c8933');
+        this.label('!',a.x,a.y-14,22,'#d67376');
+      }
+      // Hazard markings are laid on the road before raised objects.
+      for(let ri=s.rows.length-1;ri>=0;ri--) {
+        const row=s.rows[ri],z=row.z-s.distance;if(z<.4||z>C.VIEW)continue;
+        for(let i=0;i<3;i++) {
+          const o=row.lanes[i];if(!o)continue;const p=this.project(z,i-1),size=Math.min(58,w*.14)*p.s;
+          if(o.moveWarn>0){const q=this.project(z,o.moveTo-1);g.strokeStyle='#b97d50';g.lineWidth=3*p.s;g.setLineDash([5*p.s,3*p.s]);g.beginPath();g.moveTo(p.x,p.y-size*.35);g.lineTo(q.x,q.y-size*.35);g.stroke();g.setLineDash([]);this.label(o.moveTo>i?'→':'←',q.x,q.y-size*.7,Math.max(12,24*p.s),'#a57451');}
+          if(o.kind==='enemy') {
+            this.robot(o,p,size,time);
+          } else if(o.kind==='amp') {
+            for(const side of [-1,1])this.block(p.x+side*size*.6,p.y,size*.14,size*1.4,'#b59cdc','#e8d7ff','#856cba');
+            this.round(p.x-size*.7,p.y-size*1.6,size*1.4,size*.45,4*p.s,'#8969b8');this.label('PLUS',p.x,p.y-size*1.38,Math.max(9,size*.3),'#fff');this.ellipse(p.x,p.y-size*.35,size*.28,size*.28,'#f6d789');this.label('+',p.x,p.y-size*.35,Math.max(10,size*.55),'#8e6a44');
+          } else if(o.kind==='speed') {
+            this.poly([[p.x-size*.65,p.y],[p.x+size*.65,p.y],[p.x+size*.45,p.y-size*.6],[p.x-size*.45,p.y-size*.6]],'#89afce');for(let j=0;j<2;j++)this.poly([[p.x-size*.24,p.y-j*size*.23],[p.x,p.y-size*.18-j*size*.23],[p.x+size*.24,p.y-j*size*.23],[p.x,p.y-size*.08-j*size*.23]],'#fff6d6');
+          } else if(o.kind==='energy') {
+            const y=p.y-size*.45;
+            this.ellipse(p.x,p.y,size*.36,size*.1,'#68489e20');this.block(p.x,y+size*.3,size*.6,size*.65,'#a184e7','#e0c7ff','#7c59b5');
+            this.label('✦',p.x,y,Math.max(9,size*.42),'#fff');if(p.s>.38)this.label('PWR +'+o.amount,p.x,p.y-size*1.1,Math.max(10,16*p.s),'#8960bf');
+          } else if(o.kind==='boost') {
+            this.ellipse(p.x,p.y,size*.4,size*.12,'#cb994625');this.poly([[p.x+size*.1,p.y-size],[p.x-size*.3,p.y-size*.4],[p.x,p.y-size*.4],[p.x-size*.1,p.y],[p.x+size*.36,p.y-size*.6],[p.x+size*.08,p.y-size*.6]],'#edb752');
+            if(p.s>.38)this.label('RAPID',p.x,p.y-size*1.2,Math.max(10,16*p.s),'#b58a34');
+          } else if(o.kind==='laser') {
+            const on=C.laserOn(s),col=on?'#ed8a9b':'#81c4ab';
+            this.block(p.x-size*.61,p.y,size*.18,size*.56,col,'#ffe4da','#b58aac');this.block(p.x+size*.6,p.y,size*.18,size*.56,col,'#ffe4da','#b58aac');
+            g.strokeStyle=on?'#ed749dc9':'#82c8ac55';g.lineWidth=Math.max(2,4*p.s);g.beginPath();g.moveTo(p.x-size*.53,p.y-size*.28);g.lineTo(p.x+size*.66,p.y-size*.28);g.stroke();
+            if(p.s>.35)this.label(on?'ON −3':'SAFE',p.x,p.y-size*.9,Math.max(10,16*p.s),on?'#c16280':'#418f72');
+          } else if(o.kind==='gap') {
+            const a=this.project(z-2,i-1),b=this.project(z+3.5,i-1),ha=this.half*.29*a.s,hb=this.half*.29*b.s;
+            this.poly([[a.x-ha,a.y],[a.x+ha,a.y],[b.x+hb,b.y],[b.x-hb,b.y]],'#747399');
+            this.poly([[a.x-ha,a.y],[a.x+ha,a.y],[a.x+ha,a.y-5*p.s],[a.x-ha,a.y-5*p.s]],'#ffac88');
+            if(p.s>.24)this.label('−3',p.x,p.y-9*p.s,Math.max(11,17*p.s),'#626187');
+          } else if(o.kind==='wall') {
+            this.ellipse(p.x,p.y+4*p.s,size*.74,size*.16,'#6257791b');
+            this.block(p.x,p.y,size*1.3,size*.61,'#ec8b80','#ffc6ae','#cd736e');
+            g.fillStyle='#ffffff44';g.fillRect(p.x-size*.61,p.y-size*.44,size*1.18,size*.075);
+            if(o.moving)for(let k=-1;k<=1;k++)this.poly([[p.x+k*size*.3-size*.12,p.y-size*.5],[p.x+k*size*.3,p.y-size*.5],[p.x+k*size*.3+size*.12,p.y-size*.15],[p.x+k*size*.3,p.y-size*.15]],'#69536d');
+            if(p.s>.22)this.label('−'+o.amount,p.x+size*.03,p.y-size*.86,Math.max(12,22*p.s),'#b95e61');
+          } else if(o.kind==='cube') {
+            this.ellipse(p.x,p.y+3*p.s,size*.58,size*.14,'#6257791b');
+            for(let k=0;k<o.amount;k++)this.block(p.x,p.y-k*size*.21,size*.82,size*.18,t.cube,t.top,t.dark);
+            if(p.s>.27)this.label('+'+o.amount,p.x,p.y-size*(.27+o.amount*.21),Math.max(12,21*p.s),t.dark);
+          } else if(o.kind==='gem') {
+            const yy=p.y-size*.5+(motion?Math.sin(time*3+ri)*3*p.s:0);
+            this.ellipse(p.x,p.y,size*.32,size*.1,'#c3a45120');
+            this.poly([[p.x,yy-size*.38],[p.x+size*.24,yy],[p.x,yy+size*.4],[p.x-size*.24,yy]],'#e8b047');
+            this.poly([[p.x,yy-size*.38],[p.x+size*.24,yy],[p.x,yy+size*.4]],'#ffd676');
+            this.poly([[p.x,yy-size*.38],[p.x,yy],[p.x-size*.24,yy]],'#fff0b0');
+          } else {
+            this.ellipse(p.x,p.y,size*.35,size*.12,'#486f9820');
+            this.poly([[p.x-size*.35,p.y-size*.8],[p.x+size*.35,p.y-size*.8],[p.x+size*.29,p.y-size*.3],[p.x,p.y-size*.08],[p.x-size*.29,p.y-size*.3]],'#61b9ec');
+            this.label('✦',p.x,p.y-size*.5,Math.max(10,size*.45),'#fff');
+          }
+        }
+      }
+      if(world&&!s.boss&&C.LEVELS[s.level-1].length-s.distance<110){
+        const p=this.project(C.LEVELS[s.level-1].length-s.distance,0),width=this.half*p.s*1.9,height=95*p.s;
+        for(const side of [-1,1])this.block(p.x+side*width*.5,p.y,9*p.s,height,t.accent,t.haze,t.side);
+        this.round(p.x-width*.5,p.y-height,width,23*p.s,4*p.s,t.accent);this.label(C.LEVELS[s.level-1].boss?'GUARDIAN':'FINISH',p.x,p.y-height+11*p.s,Math.max(8,15*p.s),'#fff6d8');
+      }
+      if(s.boss){
+        const b=s.boss,p=this.project(36,0),bw=this.half*p.s*1.4,yy=p.y-25*p.s+(motion?Math.sin(time*2)*4:0);
+        this.ellipse(p.x,p.y+10,bw*.7,bw*.15,'#58557a25');
+        this.block(p.x,yy,bw,bw*.53,b.flash>0?'#fff4ca':world?.color||'#9580ba',t.haze,world?.accent||'#70648f');
+        const crest=b.style%5;if(crest===0){for(const side of [-1,1])this.poly([[p.x+side*bw*.35,yy-bw*.5],[p.x+side*bw*.7,yy-bw*.84],[p.x+side*bw*.62,yy-bw*.3]],t.side);}else if(crest===1){for(let j=-1;j<=1;j++)this.block(p.x+j*bw*.25,yy-bw*.49,bw*.13,bw*.28,t.side,t.haze,t.accent);}else if(crest===2){g.strokeStyle=t.accent;g.lineWidth=5;g.beginPath();g.ellipse(p.x,yy-bw*.65,bw*.25,bw*.17,0,0,Math.PI*2);g.stroke();}else if(crest===3)this.poly([[p.x-bw*.35,yy-bw*.5],[p.x,yy-bw*.86],[p.x+bw*.35,yy-bw*.5]],t.accent);else this.ellipse(p.x,yy-bw*.65,bw*.16,bw*.16,'#ffe8a6');
+        if(b.phase===2){g.strokeStyle='#e1988b';g.lineWidth=2;g.beginPath();g.ellipse(p.x,yy-bw*.26,bw*.9,bw*.52,0,0,Math.PI*2);g.stroke();}
+        for(const side of [-1,1]){this.block(p.x+side*bw*.62,yy+5,bw*.3,bw*.55,'#c198b5','#f1c6d6','#8d749d');this.ellipse(p.x+side*bw*.62,yy-bw*.07,bw*.08,bw*.08,'#f7bd87');}
+        this.round(p.x-bw*.4,yy-bw*.44,bw*.8,bw*.18,5,'#423e66');
+        for(let i=-1;i<=1;i++){const q=this.project(36,i);this.ellipse(q.x,yy-bw*.33,bw*.07,bw*.07,i===b.lane?'#91f8d5':'#726085');}
+        const q=this.project(36,b.lane);this.label('AIM '+['LEFT','CENTRE','RIGHT'][b.lane+1],q.x,yy-bw*.83,Math.max(11,Math.min(18,w*.04)),'#8260a9');
+      }
+      for(const o of s.orbs||[]){const p=this.project(o.z-s.distance,o.lane),r=Math.max(5,14*p.s);this.ellipse(p.x,p.y-18*p.s,r*1.5,r*1.5,'#e897a73a');this.ellipse(p.x,p.y-18*p.s,r,r,'#d4799a');this.ellipse(p.x-r*.2,p.y-18*p.s-r*.25,r*.38,r*.38,'#fff3dc');}
+      const origin=this.project(0,s.x),muzzleY=origin.y-s.stack*Math.min(11,h*.0125,Math.max(3,(h*.35-58)/Math.max(1,s.stack)))-33;
+      for(const beam of s.beams||[]){const dest=this.project(beam.z-s.distance,beam.target),col=C.WEAPONS[beam.tier].color;g.globalAlpha=Math.min(1,beam.life*12);g.strokeStyle=col;g.lineWidth=beam.tier>=3?4:2;g.beginPath();g.moveTo(origin.x+18,muzzleY);g.lineTo(dest.x,dest.y-24*dest.s);g.stroke();g.globalAlpha=1;}
+      // The rider faces up the track. Segmented blocks make capacity readable.
+      this.playerX=s.x;const p=this.project(0,s.x),bw=Math.min(49,w*.117),bh=Math.min(11,h*.0125,Math.max(3,(h*.35-58)/Math.max(1,s.stack)));
+      const bounce=motion?Math.sin(time*8)*1.8+this.bump*5:0;
+      let yy=p.y+bounce;
+      this.ellipse(p.x+bw*.12,p.y+5,bw*.68,bw*.21,'#59538229');
+      for(let i=0;i<s.stack;i++)this.block(p.x,yy-i*bh,bw,bh*.85,paint.body,paint.glow,paint.trim);
+      yy-=s.stack*bh;
+      if(s.shield) {g.strokeStyle='#73bfff9c';g.lineWidth=3;g.beginPath();g.ellipse(p.x+bw*.13,yy-23,bw*.73,bw*.91,0,0,Math.PI*2);g.stroke();}
+      if(!s.ended) {
+        const u=Math.min(1,bw/45),cx=p.x+bw*.1;
+        this.avatar(cx,yy,u,s.hero,s.paint,s.gun,time,motion);
+        if(s.fire>.18&&s.beams&&s.beams.length)this.ellipse(cx+20*u,yy-54*u,7*u,10*u,'#fff5bccc');
+        if(s.overdrive>0){g.strokeStyle='#e8b85b';g.lineWidth=2;g.beginPath();g.ellipse(cx,yy-23,bw*.88,bw*.98,0,0,Math.PI*2);g.stroke();}
+      }
+      for(const f of this.fx) {
+        g.globalAlpha=Math.min(1,f.life*2);
+        if(f.text)this.label(f.text,f.x,f.y,21,f.color);else {g.fillStyle=f.color;g.fillRect(f.x,f.y,5,5);}
+      }
+      g.globalAlpha=1;
+      if(this.flash>0&&motion) {g.fillStyle='rgba(240,128,118,'+this.flash*.8+')';g.fillRect(0,0,w,h);}
+    }
+  }
+  root.StackRenderer=StackRenderer;
+})(window);
+
+</script>
+<script>
+(function(root){
+  'use strict';
+  class StackPlatform {
+    constructor(){
+      this.sdk=root.ytgame;this.youtube=!!(this.sdk&&this.sdk.IN_PLAYABLES_ENV);
+      this.paused=false;this.audioEnabled=true;this.first=false;this.ready=false;
+      this.onPause=()=>{};this.onResume=()=>{};this.onAudio=()=>{};
+      this.off=[];
+      if(this.youtube){
+        this.audioEnabled=this.sdk.system.isAudioEnabled();
+        this.off.push(this.sdk.system.onPause(()=>this.pause()));
+        this.off.push(this.sdk.system.onResume(()=>this.resume()));
+        this.off.push(this.sdk.system.onAudioEnabledChange(v=>{this.audioEnabled=v;this.onAudio(v);}));
+      }else{
+        // Browser lifecycle is used ONLY outside YouTube Playables.
+        document.addEventListener('visibilitychange',()=>document.hidden?this.pause():this.resume());
+        root.addEventListener('pagehide',()=>this.pause());
+        root.addEventListener('pageshow',()=>this.resume());
+      }
+    }
+    pause(){if(this.paused)return;this.paused=true;this.onPause();}
+    resume(){if(!this.paused)return;this.paused=false;this.onResume();}
+    firstFrame(){if(this.first)return;this.first=true;if(this.youtube)this.sdk.game.firstFrameReady();}
+    gameReady(){if(this.ready)return;this.ready=true;if(this.youtube)this.sdk.game.gameReady();}
+    load(){return this.youtube?this.sdk.game.loadData():Promise.resolve(localStorage.getItem('stack-sprint-v1')||'');}
+    save(raw){return this.youtube?this.sdk.game.saveData(raw):Promise.resolve(localStorage.setItem('stack-sprint-v1',raw));}
+    score(value){return this.youtube?this.sdk.engagement.sendScore({value}):Promise.resolve();}
+    warning(){if(this.youtube&&this.sdk.health)this.sdk.health.logWarning();}
+  }
+  class StackStore {
+    constructor(platform,status){this.p=platform;this.status=status;this.data=root.StackCore.defaultSave();this.writable=false;this.busy=false;this.queued=null;this.lastRaw='';this.savedBest=0;this.sentBest=0;this.scoreBusy=false;this.loadTimer=0;this.loadReject=null;this.loadRemaining=2800;this.pendingStatus='';}
+    armLoadTimeout(){if(this.loadReject&&!this.p.paused){this.loadStarted=performance.now();this.loadTimer=setTimeout(()=>{this.loadTimer=0;this.loadReject(Error('Load timed out'));},this.loadRemaining);}}
+    pauseLoad(){if(this.loadTimer){clearTimeout(this.loadTimer);this.loadTimer=0;this.loadRemaining=Math.max(1,this.loadRemaining-(performance.now()-this.loadStarted));}}
+    wake(){this.armLoadTimeout();if(this.pendingStatus){this.status(this.pendingStatus);this.pendingStatus='';}}
+    async load(){
+      const timeout=new Promise((resolve,reject)=>{this.loadReject=reject;this.armLoadTimeout();});
+      try{const raw=await Promise.race([this.p.load(),timeout]);this.hadSave=!!raw;this.data=root.StackCore.parseSave(raw);this.savedBest=this.data.best;this.writable=true;}
+      catch(e){this.writable=false;const message='Practice mode · saving is unavailable. Existing progress is protected.';if(this.p.paused)this.pendingStatus=message;else{this.status(message);this.p.warning();}}
+      finally{if(this.loadTimer)clearTimeout(this.loadTimer);this.loadTimer=0;this.loadReject=null;}
+      return this.data;
+    }
+    checkpoint(allowPaused){
+      if(!this.writable)return;
+      const raw=JSON.stringify(this.data);
+      if(raw.length>32000){this.status('This run is too large to save.');return;}
+      this.queued=raw;
+      this.flush(!!allowPaused);
+    }
+    async flush(allowPaused){
+      if(this.busy||!this.writable||!this.queued||(this.p.paused&&!allowPaused))return;
+      const raw=this.queued;this.queued=null;
+      if(raw===this.lastRaw){this.sendScore();return;}
+      this.busy=true;let succeeded=false;
+      try{await this.p.save(raw);succeeded=true;this.lastRaw=raw;this.savedBest=JSON.parse(raw).best;if(!this.p.paused)this.status('');}
+      catch(e){if(!this.queued)this.queued=raw;if(!this.p.paused)this.status('Progress is held here. We will retry saving while you play.');}
+      finally{this.busy=false;}
+      // No asynchronous follow-up work while the host has paused execution.
+      if(!this.p.paused){this.sendScore();if(succeeded&&this.queued)this.flush();}
+    }
+    async sendScore(){
+      const value=this.savedBest;
+      if(this.p.paused||this.scoreBusy||!this.writable||value<=this.sentBest||!value)return;
+      this.scoreBusy=true;
+      try{await this.p.score(value);this.sentBest=value;}
+      catch(e){/* Retried after the next successful save or host resume. */}
+      finally{this.scoreBusy=false;}
+    }
+  }
+  class StackAudio {
+    constructor(platform){this.p=platform;this.ctx=null;this.enabled=true;this.musicEnabled=true;this.nodes=new Set();this.beatClock=0;this.beat=0;}
+    unlock(){
+      if(this.p.paused||!this.p.audioEnabled||(!this.enabled&&!this.musicEnabled))return;
+      try{if(!this.ctx)this.ctx=new(root.AudioContext||root.webkitAudioContext)();if(this.ctx.state==='suspended')this.ctx.resume().catch(()=>{});}catch(e){}
+    }
+    stop(){for(const n of this.nodes){try{n.stop();}catch(e){}}this.nodes.clear();this.beatClock=0;if(this.ctx&&this.ctx.state==='running')this.ctx.suspend().catch(()=>{});}
+    voice(start,end,duration,wave,volume,delay){
+      if(!this.ctx||this.ctx.state!=='running'||this.p.paused||!this.p.audioEnabled||this.nodes.size>=24)return;
+      const ctx=this.ctx,o=ctx.createOscillator(),gain=ctx.createGain(),now=ctx.currentTime+(delay||0);
+      o.type=wave||'sine';o.frequency.setValueAtTime(start,now);o.frequency.exponentialRampToValueAtTime(end||start,now+duration);gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(volume||.04,now+.008);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);o.connect(gain);gain.connect(ctx.destination);o.onended=()=>{this.nodes.delete(o);o.disconnect();gain.disconnect();};this.nodes.add(o);o.start(now);o.stop(now+duration+.01);
+    }
+    tone(kind,event={}){
+      if(!this.enabled)return;
+      const v=(a,b,d=.12,t='sine',amp=.045,delay=0)=>this.voice(a,b,d,t,amp,delay);
+      if(kind==='shot'){const tier=event.gun||0,notes=[[710,180,.075,'sine'],[880,240,.07,'sine'],[960,380,.09,'triangle'],[1200,270,.12,'sine'],[1100,440,.08,'triangle'],[180,62,.17,'triangle'],[720,1040,.1,'sine'],[1500,320,.16,'triangle']][tier];v(...notes,.022);if([1,4,6].includes(tier))v(980,310,.07,'sine',.016,.023);return;}
+      if(kind==='evolve'||kind==='victory'||kind==='complete'){const notes=kind==='evolve'?[523,659,784,1047]:[392,523,659,784,1047];notes.forEach((n,i)=>v(n,n,.23,'sine',.044,i*.085));return;}
+      if(kind==='cube'){v(500,720,.08,'sine',.04);return;}
+      if(kind==='energy'){v(660,660,.1,'sine',.04);v(990,990,.14,'sine',.033,.05);return;}
+      if(kind==='gem'){[880,1109,1320].forEach((n,i)=>v(n,n,.12,'sine',.028,i*.045));return;}
+      if(kind==='destroy'){v(230,115,.1,'triangle',.032);v(760,920,.11,'sine',.025,.04);return;}
+      if(kind==='warning'||kind==='boss'||kind==='bossPhase'){v(440,440,.12,'triangle',.035);v(587,587,.14,'sine',.028,.16);return;}
+      if(kind==='pulse'){v(120,820,.32,'triangle',.043);v(1047,523,.4,'sine',.022,.03);return;}
+      if(kind==='mission'||kind==='boost'||kind==='gate'){[659,784,988].forEach((n,i)=>v(n,n,.17,'sine',.033,i*.075));return;}
+      if(kind==='hit'){v(150,72,.14,'triangle',.035);return;}
+      if(kind==='shield'||kind==='blocked'){v(480,950,.2,'sine',.035);return;}
+      if(kind==='end'){v(440,220,.24,'triangle',.03);v(330,165,.28,'sine',.03,.12);return;}
+      if(kind==='speed'){v(260,900,.28,'sine',.025);return;}
+      if(kind==='split'){v(560,340,.09,'triangle',.018);v(780,420,.1,'sine',.018,.045);return;}
+      if(kind==='click')v(380,510,.055,'sine',.028);
+    }
+    tick(dt,run){
+      if(!this.musicEnabled||!this.ctx||this.ctx.state!=='running'||this.p.paused||!this.p.audioEnabled||run.ended||run.phase==='upgrade')return;
+      this.beatClock-=dt;if(this.beatClock>0)return;const world=run.mode==='campaign'?root.StackCore.LEVELS[run.level-1].world:(run.stage-1)%10;this.beatClock=run.phase==='boss'?.245:[.34,.31,.3,.32,.29,.33,.35,.3,.32,.31][world];
+      const roots=[57,53,60,55],rootNote=roots[Math.floor(this.beat/8)%4]+[0,2,5,-2,3,-3,7,-5,2,0][world],steps=world%2?[0,12,7,3,10,7,15,12]:[0,7,12,15,7,12,3,7],midi=rootNote+steps[this.beat%8],hz=440*Math.pow(2,(midi-69)/12);
+      this.voice(hz,hz,.31,'sine',.012);
+      if(this.beat%4===0){const bass=440*Math.pow(2,(rootNote-12-69)/12);this.voice(bass,bass,.52,'triangle',.012);}
+      this.beat=(this.beat+1)%32;
+    }
+  }
+  root.StackPlatform=StackPlatform;root.StackStore=StackStore;root.StackAudio=StackAudio;
+})(window);
+
+</script>
+<script>
+(function(){
+  'use strict';
+  const C=StackCore,$=id=>document.getElementById(id),canvas=$('world');
+  const renderer=new StackRenderer(canvas),platform=new StackPlatform();
+  const store=new StackStore(platform,text=>{$('save-status').textContent=text;});
+  const sound=new StackAudio(platform);
+  let data=store.data,run=C.newRun(17167),state='loading',modal='',returnState='menu';
+  let raf=0,last=0,clock=0,checkpointClock=0,toastUntil=0,lastScore=-1,lastStack=-1,lastGems=-1;
+  let ready=false,pointer=null,accumulator=0,pendingResize=false,runStartBest=0,mapWorld=0,mapLevel=1;
+  const demo=C.newRun(339451);demo.stack=7;demo.x=.25;demo.rows[0].lanes=[{kind:'cube',amount:3},null,{kind:'gem',amount:1}];
+  const fmt=n=>Math.floor(n).toLocaleString('en-US');
+  const compact=n=>n>=1e6?(n/1e6).toFixed(1)+'M':n>=1000?(n/1000).toFixed(1)+'K':fmt(n);
+  function shown(id,on){$(id).hidden=!on;}
+  function active(){return state==='running'&&run.phase!=='upgrade'&&!modal&&!platform.paused;}
+  function snapshot(){if(['running','paused','upgrading'].includes(state)||(state==='menu'&&data.active))data.active=run.ended?null:JSON.parse(JSON.stringify(run));data.best=Math.max(data.best,run.score);data.highestGun=Math.max(data.highestGun,run.gun);}
+  function save(flushOnPause){snapshot();store.checkpoint(flushOnPause);checkpointClock=0;}
+  function toast(text){$('toast').textContent=text;$('toast').classList.add('visible');toastUntil=clock+1.8;$('accessible-status').textContent=text;}
+  function ui(){
+    const menu=state==='menu',playing=['running','paused','upgrading'].includes(state);
+    shown('menu',menu);shown('play-controls',playing&&state!=='upgrading');shown('pause-button',state==='running'&&!modal);shown('pause',state==='paused'&&!modal);shown('results',state==='results'&&!modal);shown('upgrade',state==='upgrading'&&!modal);shown('combat-hud',playing);
+    $('menu').inert=!!modal;$('play-controls').inert=!!modal||state!=='running';$('settings-button').inert=!!modal;
+    $('score-caption').textContent=playing?'RUN SCORE':'PERSONAL BEST';
+    $('play-label').textContent=data.active&&!data.active.ended?'Continue '+(data.active.mode==='campaign'?'level '+data.active.level:'endless run'):'Start level '+data.campaign.unlocked;
+    $('collection-note').textContent=C.clearedCount(data.campaign)+' / 100 levels · '+data.campaign.stars.reduce((a,b)=>a+b,0)+' stars · '+nextUnlock();
+    $('sfx-toggle').checked=data.settings.sfx;$('motion-toggle').checked=data.settings.motion;$('music-toggle').checked=data.settings.music;
+    $('assist-toggle').checked=data.campaign.assist;
+    sound.enabled=data.settings.sfx;sound.musicEnabled=data.settings.music;demo.hero=data.campaign.hero;demo.paint=data.campaign.paint;demo.gun=data.campaign.weapon;
+    lastScore=lastStack=lastGems=-1;hud();
+  }
+  function hud(){
+    const playing=['running','paused','upgrading'].includes(state);
+    const score=playing?run.score:data.best,gems=playing?run.gems:data.totalGems;
+    if(score!==lastScore){$('score').textContent=fmt(score);lastScore=score;}
+    if(gems!==lastGems){$('gems').textContent=fmt(gems);lastGems=gems;}
+    if(run.stack!==lastStack){$('stack').textContent=run.stack;lastStack=run.stack;}
+    const campaign=run.mode==='campaign',def=campaign?C.LEVELS[run.level-1]:null;
+    shown('shield-label',!!run.shield);shown('stage-label',playing&&!run.boss);$('stage-label').textContent=campaign?'LEVEL '+run.level+' · '+def.name+(run.assist?' · ASSIST':''):'SKY '+String(run.stage).padStart(2,'0')+' · '+C.BIOMES[(run.stage-1)%6].toUpperCase();
+    const w=C.WEAPONS[run.gun],st=C.stats(run),next=C.WEAPONS[run.gun+1];
+    $('weapon-level').textContent='BLASTER '+String(run.gun+1).padStart(2,'0')+' / 08';$('weapon-name').textContent=w.name;
+    $('player-power').textContent=compact(st.power);$('enemy-power').textContent='×'+(C.combatScale(run)*(campaign?1+(def.rank-1)*.15:1)).toFixed(2);
+    $('energy-fill').style.width=(campaign?C.clamp(run.distance/def.length*100,0,100):next?C.clamp((run.energy-w.need)/(next.need-w.need)*100,0,100):100)+'%';
+    $('energy-caption').textContent=campaign?C.OBJECTIVES[def.objective]+': '+C.objectiveValue(run,def.objective)+' / '+def.target+' · finish with '+def.starHealth+' blocks':next?(next.need-run.energy)+' energy → '+next.name:'AURORA EVOLUTION COMPLETE';
+    $('pulse-button').disabled=!active()||run.charge<100;$('pulse-button').classList.toggle('ready',run.charge>=100);$('pulse-label').textContent=run.charge>=100?'READY · SPACE':Math.floor(run.charge)+'%';
+    shown('boss-meter',playing&&!!run.boss);
+    if(run.boss){$('boss-name').textContent=run.boss.name;$('boss-hp').textContent=fmt(Math.ceil(run.boss.hp))+' / '+fmt(run.boss.maxHp);$('boss-fill').style.width=(100*run.boss.hp/run.boss.maxHp)+'%';}
+    shown('tutorial',active()&&data.runs===0&&run.time<9);
+  }
+  function start(fresh,mode,id){
+    if(!ready||platform.paused)return;
+    if(fresh||!data.active){
+      const chosen=mode||'campaign';
+      if(chosen==='campaign')run=C.newCampaign(id||data.campaign.unlocked,data.campaign);
+      else{const seed=crypto.getRandomValues(new Uint32Array(1))[0];run=C.newRun(seed);run.hero=data.campaign.hero;run.paint=data.campaign.paint;}
+      runStartBest=data.best;
+    }
+    else {run=JSON.parse(JSON.stringify(data.active));runStartBest=data.best;}
+    if(modal)shown(modal,false);
+    data.active=run;state='running';modal='';renderer.fx.length=0;accumulator=0;last=0;
+    sound.unlock();sound.tone('click');if(run.phase==='upgrade')showUpgrade();ui();save();canvas.focus();
+  }
+  function pause(){if(!active())return;state='paused';pointer=null;save();sound.stop();ui();$('resume-button').focus();}
+  function resume(){if(platform.paused)return;state='running';accumulator=0;last=0;sound.unlock();ui();canvas.focus();}
+  function home(){if(platform.paused)return;if(state!=='results')save();state='menu';modal='';sound.stop();ui();$('play-button').focus();}
+  function end(){
+    if(state==='results')return;
+    const campaign=run.mode==='campaign',count=C.clearedCount(data.campaign),award=C.awardLevel(data,run);
+    state='results';data.best=Math.max(data.best,run.score);data.runs=Math.min(1e9,data.runs+1);data.totalGems=Math.min(1e9,data.totalGems+run.gems);data.active=null;
+    data.totalBosses=Math.min(1e9,data.totalBosses+run.bosses);data.highestGun=Math.max(data.highestGun,run.gun);
+    $('result-score').textContent=fmt(run.score);$('result-best').textContent=fmt(data.best);$('result-distance').textContent=Math.floor(run.distance)+'m';$('result-gems').textContent=run.gems;$('result-reason').textContent=run.reason;
+    $('result-eyebrow').textContent=campaign?(run.won?'DELIVERY COMPLETE':'A NEW ROUTE TO TRY'):run.score>runStartBest?'A NEW PERSONAL BEST':'THAT WAS A GOOD RUN';
+    $('result-title').textContent=campaign?'Level '+run.level+' · '+C.LEVELS[run.level-1].name:'Another little adventure?';
+    shown('result-stars',campaign);$('result-stars').textContent=run.won?'★'.repeat(award.stars)+'☆'.repeat(3-award.stars):'Keep exploring';
+    shown('next-button',campaign&&run.won&&run.level<100);$('next-button').textContent='Next level · '+Math.min(100,run.level+1)+' →';
+    shown('result-map',campaign);shown('result-hangar',campaign);$('retry-button').textContent=campaign?(run.won?'Replay this level':'Try this level again'):'Another endless run';
+    shown('result-modules',campaign&&run.won&&data.campaign.tokens>0);if(campaign&&run.won)moduleCards('result-modules');
+    $('result-loadout').textContent=C.WEAPONS[run.gun].name+' · '+run.kills+' robots · '+run.bosses+' guardians';
+    $('result-missions').replaceChildren();
+    if(campaign){const d=C.LEVELS[run.level-1],v=C.objectiveValue(run,d.objective),labels=[['Reach the finish',run.won],[C.OBJECTIVES[d.objective]+': '+v+' / '+d.target,d.objective==='clean'?v<=d.target:v>=d.target],['Finish with '+d.starHealth+' blocks',run.stack>=d.starHealth]];labels.forEach(([label,done])=>{const b=document.createElement('span');b.textContent=(run.won&&done?'✓ ':'○ ')+label;b.className=run.won&&done?'done':'';$('result-missions').append(b);});
+      const unlocks=unlocksAt(C.clearedCount(data.campaign)).filter(x=>x.need>count);$('result-reason').textContent=run.won?(award.first?'New clear · +1 permanent module point. ':'Stars updated. ')+(unlocks.length?'Unlocked: '+unlocks.map(x=>x.name).join(', ')+'. ':nextUnlock())+(run.level===100?' All 100 deliveries complete. Replay for stars or explore Endless.':''):run.reason+' '+d.tip;
+    }else ['8 robots','Arc evolution','Guardian clear'].forEach((label,i)=>{const b=document.createElement('span');b.textContent=(run.missions&(1<<i)?'✓ ':'○ ')+label;if(run.missions&(1<<i))b.className='done';$('result-missions').append(b);});
+    store.checkpoint();ui();(campaign&&run.won&&run.level<100?$('next-button'):$('retry-button')).focus();
+  }
+  function changeLane(d){if(!active())return;sound.unlock();run.target=C.clamp(run.target+d,-1,1);}
+  function openModal(id){
+    if(!ready||platform.paused||modal)return;
+    returnState=state;modal=id;if(state==='running')save();sound.stop();
+    shown(id,true);if(id==='themes')themes();if(id==='help')armory();if(id==='campaign'){mapLevel=data.campaign.unlocked;mapWorld=C.LEVELS[mapLevel-1].world;levelMap();}if(id==='hangar')hangar();ui();
+    $(id).querySelector('button,input')?.focus();
+  }
+  function closeModal(){if(!modal||platform.paused)return;const old=modal;shown(modal,false);modal='';state=returnState;last=0;accumulator=0;ui();if(state==='running')sound.unlock();(old==='settings'?$('settings-button'):$('play-button')).focus();}
+  function unlocksAt(count){return [...C.HEROES,...C.PAINTS,...C.WEAPONS.map((w,i)=>({name:w.name,need:C.GUN_UNLOCKS[i]}))].filter(x=>x.need<=count);}
+  function nextUnlock(){const count=C.clearedCount(data.campaign),items=[...C.HEROES,...C.PAINTS,...C.WEAPONS.map((w,i)=>({name:w.name,need:C.GUN_UNLOCKS[i]}))].filter(x=>x.need>count).sort((a,b)=>a.need-b.need);return items.length?items[0].name+' in '+(items[0].need-count)+' clears':'Collection complete';}
+  function card(parent,title,copy,onClick,options={}){
+    const b=document.createElement('button');b.className=options.className||'loadout-card';b.disabled=!!options.disabled;
+    if(options.selected!==undefined)b.setAttribute('aria-pressed',String(options.selected));
+    if(options.color){const mark=document.createElement('i');mark.className=options.shape?'hero-swatch '+options.shape:'paint-swatch';mark.style.background=options.color;mark.textContent=options.icon||'';if(options.trim)mark.style.borderColor=options.trim;b.append(mark);}
+    const titleEl=document.createElement('strong'),sub=document.createElement('span');titleEl.textContent=title;sub.textContent=copy;b.append(titleEl,sub);
+    b.addEventListener('click',()=>{if(platform.paused)return;onClick();});$(parent).append(b);return b;
+  }
+  function levelMap(){
+    const c=data.campaign,w=C.WORLDS[mapWorld],d=C.LEVELS[mapLevel-1];
+    $('map-summary').textContent=C.clearedCount(c)+' / 100 clears · '+c.stars.reduce((a,b)=>a+b,0)+' / 300 stars';
+    $('world-tabs').replaceChildren();C.WORLDS.forEach((world,i)=>{const b=document.createElement('button');b.textContent=String(i+1).padStart(2,'0');b.setAttribute('aria-label',world.name);b.setAttribute('aria-pressed',String(mapWorld===i));b.style.borderColor=world.color;b.addEventListener('click',()=>{if(platform.paused)return;mapWorld=i;mapLevel=i*10+1;levelMap();});$('world-tabs').append(b);});
+    $('world-number').textContent='WORLD '+String(mapWorld+1).padStart(2,'0');$('world-name').textContent=w.name;$('world-tag').textContent=w.tag;
+    $('world-number').style.color=w.accent;$('world-name').style.color=w.accent;
+    $('level-grid').replaceChildren();C.LEVELS.slice(mapWorld*10,mapWorld*10+10).forEach(l=>{const stars=c.stars[l.id-1],locked=l.id>c.unlocked;card('level-grid',String(l.id),locked?'Locked':stars?'★'.repeat(stars)+'☆'.repeat(3-stars):l.boss?'Guardian':'New route',()=>{mapLevel=l.id;levelMap();},{selected:l.id===mapLevel,className:'level-card'+(l.boss?' guardian':'')});});
+    $('level-kicker').textContent=(d.boss?(d.mini?'SCOUT GUARDIAN':'WORLD GUARDIAN'):'COURIER ROUTE')+' · ROBOT MK '+d.rank;
+    $('level-title').textContent='Level '+d.id+' · '+d.name;$('level-tip').textContent=d.tip;
+    $('level-goal').textContent='★ Finish · ★ '+C.OBJECTIVES[d.objective]+' '+(d.objective==='clean'?'≤ ':'≥ ')+d.target+' · ★ Keep '+d.starHealth+' blocks';
+    $('level-loadout').textContent=C.HEROES[c.hero].name+' / '+C.PAINTS[c.paint].name+' / '+C.WEAPONS[c.weapon].name+(c.assist?' / Assist':'');
+    $('launch-level').disabled=mapLevel>c.unlocked;$('launch-level').textContent=mapLevel>c.unlocked?'Clear level '+(mapLevel-1)+' to unlock':'Start level '+mapLevel+' →';
+  }
+  function moduleCards(parent){
+    const c=data.campaign;$(parent).replaceChildren();
+    C.MODULES.forEach(m=>{card(parent,m.icon+' '+m.name,m.text+' Level '+c.modules[m.id]+' / '+m.cap,()=>{if(C.chooseModule(c,m.id)){sound.unlock();sound.tone('evolve');store.checkpoint();toast(m.name+' installed for your next run');if(modal==='hangar')hangar();else{moduleCards(parent);shown(parent,c.tokens>0);}ui();}},{className:'upgrade-card',disabled:c.tokens===0||c.modules[m.id]>=m.cap});});
+  }
+  function hangar(){
+    const c=data.campaign,count=C.clearedCount(c),paint=C.PAINTS[c.paint];$('hangar-summary').textContent=count+' levels cleared · '+nextUnlock();
+    for(const id of ['hero-grid','paint-grid','gun-grid'])$(id).replaceChildren();
+    const equip=(key,i)=>{c[key]=i;store.checkpoint();sound.unlock();sound.tone('click');hangar();ui();$({hero:'hero-grid',paint:'paint-grid',weapon:'gun-grid'}[key]).children[i]?.focus();};
+    C.HEROES.forEach((h,i)=>card('hero-grid',h.name,count<h.need?'Clear '+h.need+' levels':h.detail,()=>equip('hero',i),{disabled:count<h.need,selected:c.hero===i,color:paint.body,trim:paint.trim,shape:h.shape,icon:'••'}));
+    C.PAINTS.forEach((p,i)=>card('paint-grid',p.name,count<p.need?p.need+' clears':'Ready to wear',()=>equip('paint',i),{disabled:count<p.need,selected:c.paint===i,color:p.body,trim:p.trim}));
+    C.WEAPONS.forEach((w,i)=>card('gun-grid',w.name,(count<C.GUN_UNLOCKS[i]?'Clear '+C.GUN_UNLOCKS[i]+' levels · ':'')+w.description,()=>equip('weapon',i),{disabled:count<C.GUN_UNLOCKS[i],selected:c.weapon===i,color:w.color,icon:String(i+1)}));
+    $('module-note').textContent=c.tokens+' points available. Each first clear grants one. Choose a build; points can wait.';moduleCards('module-grid');
+  }
+  function themes(){
+    $('theme-grid').replaceChildren();
+    C.THEMES.forEach((t,i)=>{
+      const b=document.createElement('button');b.className='theme';b.disabled=data.best<t.need;b.setAttribute('aria-pressed',String(data.theme===i));
+      const swatch=document.createElement('i');swatch.style.background=t.sky;const text=document.createElement('span');text.textContent=t.name;const sub=document.createElement('small');sub.textContent=b.disabled?fmt(t.need)+' best':'Unlocked';b.append(swatch,text,sub);
+      b.addEventListener('click',()=>{if(platform.paused)return;data.theme=i;store.checkpoint();themes();});$('theme-grid').append(b);
+    });
+  }
+  function armory(){
+    $('weapon-gallery').replaceChildren();C.WEAPONS.forEach((w,i)=>{const card=document.createElement('div');card.className='weapon-card';const icon=document.createElement('i');icon.style.background=w.color;icon.textContent=String(i+1);const copy=document.createElement('div'),name=document.createElement('strong'),desc=document.createElement('span');name.textContent=w.name+' · '+(w.need?w.need+' energy':'Starter');desc.textContent=w.description;copy.append(name,desc);card.append(icon,copy);$('weapon-gallery').append(card);});
+  }
+  function showUpgrade(){
+    state='upgrading';pointer=null;accumulator=0;
+    $('upgrade-caption').textContent='Sky '+run.stage+' cleared. Choose one free module for '+C.BIOMES[run.stage%6]+'.';
+    $('rest-note').textContent=store.writable?'A good place to take a break. Progress saves automatically.':'Practice mode: this run cannot be saved.';
+    $('upgrade-options').replaceChildren();
+    C.UPGRADES.forEach(u=>{const b=document.createElement('button');b.className='upgrade-card';b.id='upgrade-'+u.id;const icon=document.createElement('i'),name=document.createElement('strong'),text=document.createElement('span'),level=document.createElement('small');icon.textContent=u.icon;name.textContent=u.name;text.textContent=u.id==='rebuild'&&run.upgrades.rebuild>=6?'Restore 8 blocks and gain one shield. Capacity is at its maximum.':u.text;level.textContent='MODULE LEVEL '+(run.upgrades[u.id]+1);if(u.id==='rapid'&&run.upgrades.rapid>=13){b.disabled=true;level.textContent='MAXIMUM FIRING RATE';}b.append(icon,name,text,level);b.addEventListener('click',()=>{if(platform.paused||modal)return;if(C.chooseUpgrade(run,u.id)){state='running';accumulator=0;last=0;sound.unlock();sound.tone('evolve');toast(u.name+' installed · Sky '+run.stage);ui();save();canvas.focus();}});$('upgrade-options').append(b);});
+    ui();save();$('upgrade-options').querySelector('button')?.focus();
+  }
+  function usePulse(){if(!active())return;sound.unlock();const list=C.pulse(run);if(list.length){events(list);hud();save();}}
+  function events(list){
+    for(const e of list){
+      if(e.type!=='impact')sound.tone(e.type,e);
+      if(e.type==='impact'||e.type==='destroy')renderer.impact(e,run,data.settings.motion);
+      if(e.type==='cube')renderer.burst(e.amount?'+'+e.amount+' blocks':'Full stack!',C.THEMES[data.theme].dark,e.type,data.settings.motion);
+      if(e.type==='gem')renderer.burst('+75','#bd8c2d',e.type,data.settings.motion);
+      if(e.type==='shield') {renderer.burst('Shield!','#4798d4',e.type,data.settings.motion);toast('One hit protected');}
+      if(e.type==='blocked')renderer.burst('Protected!','#4798d4',e.type,data.settings.motion);
+      if(e.type==='hit')renderer.burst('−'+e.amount+' blocks','#ce746e',e.type,data.settings.motion);
+      if(e.type==='energy')renderer.burst('+'+e.amount+' power','#9070ba',e.type,false);
+      if(e.type==='evolve'){toast('EVOLVED · '+C.WEAPONS[e.gun].name);renderer.burst('EVOLVED!','#9d7ec6',e.type,data.settings.motion);save();}
+      if(e.type==='boost')toast('Rapid fire · 6 seconds');
+      if(e.type==='gate')toast('Power gate · rapid fire + pulse charge');
+      if(e.type==='speed')toast('Momentum pad · steer through the boost');
+      if(e.type==='bossPhase')toast('Guardian phase 2 · watch the new pattern');
+      if(e.type==='pulse'){renderer.burst('PULSE!','#af89d5',e.type,data.settings.motion);toast('Pulse released');}
+      if(e.type==='boss'){toast(e.name+' · aim at the lit core');save();}
+      if(e.type==='victory')showUpgrade();
+      if(e.type==='mission')toast(e.name+' · +'+e.amount);
+      if(e.type==='end'||e.type==='complete'){end();return;}
+    }
+  }
+  function frame(now){
+    raf=0;if(platform.paused)return;
+    const dt=last?Math.min(.05,(now-last)/1000):0;last=now;clock+=dt;
+    if(pendingResize){renderer.resize();pendingResize=false;}
+    if(active()){
+      accumulator+=dt;
+      while(accumulator>=1/120&&active()){events(C.step(run,1/120));accumulator-=1/120;}
+      checkpointClock+=dt;
+      if(checkpointClock>=2)save();
+      sound.tick(dt,run);
+      hud();
+    }
+    if(!modal&&state!=='paused')renderer.update(dt);
+    if(toastUntil&&clock>toastUntil){$('toast').classList.remove('visible');toastUntil=0;}
+    renderer.draw(state==='menu'||state==='loading'?demo:run,data.theme,clock,state==='menu'||state==='loading',data.settings.motion&&!modal&&state!=='paused');
+    if(!active()&&ready){checkpointClock+=dt;if(checkpointClock>=4){store.flush();store.sendScore();checkpointClock=0;}}
+    raf=requestAnimationFrame(frame);
+  }
+  function loop(){if(!raf&&!platform.paused){last=0;raf=requestAnimationFrame(frame);}}
+  platform.onPause=()=>{
+    if(raf)cancelAnimationFrame(raf);raf=0;pointer=null;
+    store.pauseLoad();
+    if(ready)save(true); // One small progress flush on pause; no follow-up tasks.
+    sound.stop();
+  };
+  platform.onResume=()=>{
+    accumulator=0;pendingResize=true;
+    store.wake();
+    if(ready){store.flush();store.sendScore();if(state==='running'&&!modal){state='paused';ui();}}
+    else if(!bootStarted)boot();
+    else if(store.writable||bootLoaded)finishBoot();
+    loop();
+  };
+  platform.onAudio=enabled=>{if(!enabled)sound.stop();else if(active())sound.unlock();};
+  rootListeners();
+  function rootListeners(){
+    $('play-button').addEventListener('click',()=>start(false));$('retry-button').addEventListener('click',()=>start(true,run.mode,run.level));
+    $('endless-button').addEventListener('click',()=>start(true,'endless'));
+    $('next-button').addEventListener('click',()=>{if(run.won&&run.level<100)start(true,'campaign',run.level+1);});
+    $('campaign-button').addEventListener('click',()=>openModal('campaign'));$('result-map').addEventListener('click',()=>openModal('campaign'));
+    $('hangar-button').addEventListener('click',()=>openModal('hangar'));$('launch-level').addEventListener('click',()=>{if(mapLevel<=data.campaign.unlocked)start(true,'campaign',mapLevel);});
+    $('result-hangar').addEventListener('click',()=>openModal('hangar'));
+    $('pause-button').addEventListener('click',pause);$('resume-button').addEventListener('click',resume);$('menu-button').addEventListener('click',home);$('result-home').addEventListener('click',home);
+    $('pulse-button').addEventListener('click',usePulse);$('upgrade-home').addEventListener('click',home);
+    $('settings-button').addEventListener('click',()=>openModal('settings'));$('themes-button').addEventListener('click',()=>openModal('themes'));$('help-button').addEventListener('click',()=>openModal('help'));
+    document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeModal));
+    $('left-button').addEventListener('pointerdown',e=>{e.preventDefault();changeLane(-1);});$('right-button').addEventListener('pointerdown',e=>{e.preventDefault();changeLane(1);});
+    // Keyboard activation of the on-screen buttons remains accessible.
+    $('left-button').addEventListener('click',e=>{if(e.detail===0)changeLane(-1);});$('right-button').addEventListener('click',e=>{if(e.detail===0)changeLane(1);});
+    $('sfx-toggle').addEventListener('change',()=>{if(platform.paused)return;data.settings.sfx=$('sfx-toggle').checked;sound.enabled=data.settings.sfx;if(!sound.enabled)sound.stop();else{sound.unlock();sound.tone('click');}store.checkpoint();});
+    $('music-toggle').addEventListener('change',()=>{if(platform.paused)return;data.settings.music=$('music-toggle').checked;sound.musicEnabled=data.settings.music;sound.stop();store.checkpoint();});
+    $('motion-toggle').addEventListener('change',()=>{if(platform.paused)return;data.settings.motion=$('motion-toggle').checked;if(!data.settings.motion)renderer.fx.length=0;store.checkpoint();});
+    $('assist-toggle').addEventListener('change',()=>{if(platform.paused)return;data.campaign.assist=$('assist-toggle').checked;store.checkpoint();});
+    canvas.tabIndex=-1;
+    canvas.addEventListener('pointerdown',e=>{if(!active())return;sound.unlock();pointer={id:e.pointerId,x:e.clientX};canvas.setPointerCapture(e.pointerId);});
+    canvas.addEventListener('pointermove',e=>{
+      if(!pointer||pointer.id!==e.pointerId||!active())return;
+      const threshold=Math.max(26,Math.min(75,innerWidth*.13)),delta=e.clientX-pointer.x;
+      if(Math.abs(delta)>=threshold){const steps=Math.floor(Math.abs(delta)/threshold);changeLane(Math.sign(delta)*steps);pointer.x+=Math.sign(delta)*steps*threshold;}
+    });
+    for(const type of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(type,()=>{pointer=null;});
+    document.addEventListener('keydown',e=>{
+      if(platform.paused||!ready)return;
+      if(e.key==='Escape'){if(modal)closeModal();else if(state==='running')pause();else if(state==='paused')resume();return;}
+      const focusScope=modal||({paused:'pause',results:'results',upgrading:'upgrade'})[state];
+      if(focusScope&&e.key==='Tab'){const els=[...$(focusScope).querySelectorAll('button:not(:disabled):not([hidden]),input')].filter(x=>!x.closest?.('[hidden]'));const a=els[0],b=els.at(-1);if(a&&e.shiftKey&&document.activeElement===a){e.preventDefault();b.focus();}else if(a&&!e.shiftKey&&document.activeElement===b){e.preventDefault();a.focus();}return;}
+      if(modal)return;
+      if(e.repeat)return;
+      if(e.code==='KeyP'){if(state==='running')pause();else if(state==='paused')resume();}
+      if(e.code==='Space'&&active()){e.preventDefault();usePulse();}
+      if(active()&&['ArrowLeft','KeyA','ArrowRight','KeyD'].includes(e.code)){e.preventDefault();changeLane(['ArrowLeft','KeyA'].includes(e.code)?-1:1);}
+    });
+    addEventListener('resize',()=>{pendingResize=true;});
+  }
+  let bootLoaded=false,bootStarted=false;
+  function finishBoot(){
+    if(ready||platform.paused)return;
+    data=store.data;
+    if(!store.hadSave&&typeof window.matchMedia==='function'&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)data.settings.motion=false;
+    if(data.active&&!data.active.ended)run=JSON.parse(JSON.stringify(data.active));
+    else data.active=null;
+    runStartBest=data.best;
+    state='menu';ready=true;ui();shown('loading',false);renderer.draw(demo,data.theme,0,true,data.settings.motion);platform.gameReady();store.sendScore();loop();
+  }
+  async function boot(){
+    if(bootStarted||platform.paused)return;bootStarted=true;
+    renderer.draw(demo,0,0,true,false);platform.firstFrame();
+    if(document.documentElement.dataset.platform==='youtube'&&!window.ytgame){$('loading-text').textContent='YouTube could not connect. Please reopen the game.';return;}
+    await store.load();bootLoaded=true;finishBoot();
+  }
+  boot().catch(()=>{$('loading-text').textContent='Could not start. Please reopen the game.';});
+  
+})();
+
+</script>
+</body></html>
